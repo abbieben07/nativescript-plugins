@@ -33,11 +33,11 @@
         "publish": "npm run setup && npm run build.all && lerna publish --create-release=github --force-publish",
         "readme": "node ./tools/readme.js",
         "setup": "npm run submodules && ts-patch install",
-        "start": "./node_modules/.bin/ntl -A -s 15 -o",
+        "start": "ntl -A -s 15 -o",
         "submodules": "git submodule update --init",
         "sync": "node ./tools/sync.js",
         "sync.test": "node ./tools/sync.js",
-        "tsc": "cpy '**/*.d.ts' '../plugin' --parents --cwd=src && tsc -skipLibCheck -d",
+        "tsc": "cpy '**/*.{d.ts,aar,jar,java}' '../plugin' --parents --cwd=src && tsc -skipLibCheck -d",
         "update": "node ./tools/update.js",
         "watch": "npm run tsc -- -w"
     },
@@ -65,5 +65,9 @@
         "@nativescript-community/plugin-seed-tools": {
             "injected": true
         }
+    },
+    "devDependencies": {
+        "lerna": "^4.0.0",
+        "ts-node": "^10.4.0"
     }
 }
