@@ -1,0 +1,44 @@
+{
+    "name": "@abbieben/rich-text",
+    "version": "1.4.0",
+    "description": "This is the description for the plugin seed. This is what will be published to NPM.",
+    "main": "./rich-text",
+    "sideEffects": false,
+    "typings": "./rich-text.d.ts",
+    "nativescript": {
+        "platforms": {
+            "android": "6.0.0",
+            "ios": "6.0.0"
+        }
+    },
+    "keywords": [
+        "NativeScript",
+        "JavaScript",
+        "Android",
+        "iOS",
+        "Angular",
+        "React",
+        "Svelte",
+        "Vue"
+    ],
+    "bugs": {
+        "url": "https://github.com/abbieben07/rich-text/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/abbieben07/rich-text"
+    },
+    "license": "Apache-2.0",
+    "readmeFilename": "README.md",
+    "dependencies": {
+        "currency.js": "^2.0.4",
+        "currency-symbol": "^1.0.6",
+        "imask": "^6.2.2",
+        "libphonenumber-js": "^1.9.39",
+        "moment": "^2.29.1",
+        "@nativescript/theme": "^3.0.2"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
+}

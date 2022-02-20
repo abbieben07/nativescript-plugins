@@ -3,13 +3,12 @@ import { textProperty } from '@nativescript/core/ui/text-base';
 import { CountryCode } from 'libphonenumber-js';
 import { FormatPhone } from './phone.common';
 
-export const PhoneTextField = (target: EditableTextBase, oldvalue: string, value: string): void => {
-
+export const PhoneTextField = (target: EditableTextBase, _oldvalue: string, value: string): void => {
     target.once(View.loadedEvent, (_) => {
         const view: android.widget.EditText = target.nativeTextViewProtected;
 
         //@ts-ignore
-        view.removeTextChangedListener(view.listener)
+        view.removeTextChangedListener(view.listener);
         view.setText(FormatPhone(view.getText().toString(), value as CountryCode));
 
         //@ts-ignore
@@ -29,11 +28,11 @@ class PhoneTextWatcher extends java.lang.Object implements android.text.TextWatc
         return global.__native(this);
     }
 
-    afterTextChanged(s: any): void { }
+    afterTextChanged(_s: any): void {}
 
-    beforeTextChanged(s: string, start: number, before: number, count: number): void { }
+    beforeTextChanged(_s: string, _start: number, _before: number, _count: number): void {}
 
-    onTextChanged(s: string, start: number, before: number, count: number) {
+    onTextChanged(s: string, _start: number, _before: number, _count: number) {
         const owner: EditableTextBase = this.owner.get();
         const editText: android.widget.EditText = owner.nativeTextViewProtected;
         editText.removeTextChangedListener(this);

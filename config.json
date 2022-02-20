@@ -1,10 +1,7 @@
 {
     "readme": false,
-    "angular": true,
+    "angular": false,
     "demos": [
-        "ng",
-        "react",
-        "svelte",
         "vue"
     ]
 }

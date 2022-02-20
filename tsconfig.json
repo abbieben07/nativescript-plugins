@@ -1,9 +1,20 @@
-{    
+{
     "extends": "./tools/tsconfig",
     "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
         "paths": {
-            "@nativescript-community/plugin-seed": ["src/plugin-seed"],
-            "@nativescript-community/plugin-seed/*": ["src/plugin-seed/*"]
-       },
-    }
+            "@abbieben/webview-interface": [
+                "src/webview-interface"
+            ],
+            "@abbieben/webview-interface/*": [
+                "src/webview-interface/*"
+            ],
+            "@abbieben/rich-text": [
+                "src/rich-text"
+            ],
+            "@abbieben/rich-text/*": [
+                "src/rich-text/*"
+            ]
+        },
+    },
 }

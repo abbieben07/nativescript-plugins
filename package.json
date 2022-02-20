@@ -37,12 +37,18 @@
         "submodules": "git submodule update --init",
         "sync": "node ./tools/sync.js",
         "sync.test": "node ./tools/sync.js",
-        "tsc": "cpy '**/*.{d.ts,aar,jar,java}' '../plugin' --parents --cwd=src && tsc -skipLibCheck -d",
+        "tsc": "cpy '**/*.{d.ts,aar,jar,java,xml}' '../packages' --parents --cwd=src && tsc -skipLibCheck -d",
         "update": "node ./tools/update.js",
         "watch": "npm run tsc -- -w"
     },
     "dependencies": {
-        "@nativescript-community/plugin-seed-tools": "file:tools"
+        "@nativescript-community/plugin-seed-tools": "file:tools",
+        "@nativescript/theme": "^3.0.2",
+        "currency-symbol": "^1.0.6",
+        "currency.js": "^2.0.4",
+        "imask": "^6.4.2",
+        "libphonenumber-js": "^1.9.49",
+        "moment": "^2.29.1"
     },
     "ntl": {
         "descriptions": {

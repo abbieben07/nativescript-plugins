@@ -1,4 +1,4 @@
-import VersionNumber from '@nativescript-community/plugin-seed/svelte';
+/* import VersionNumber from '@nativescript-community/plugin-seed/svelte';
 
 import Demo1 from './Demo1.svelte';
 import Demo2 from './Demo2.svelte';
@@ -13,3 +13,4 @@ export const demos = [
     { name: 'Demo 2', path: "demo2", component: Demo2 },
     { name: 'Development', path: "development", component: Development }
 ];
+ */

@@ -1,4 +1,4 @@
-import { register } from '@nativescript-community/plugin-seed/react';
+/* import { register } from '@nativescript-community/plugin-seed/react';
 
 import { Demo1 } from './Demo1';
 import { Demo2 } from './Demo2';
@@ -13,3 +13,4 @@ export const demos = [
     { name: 'Demo 2', path: 'demo2', component: Demo2 },
     { name: 'Development', path: 'development', component: Development }
 ];
+ */

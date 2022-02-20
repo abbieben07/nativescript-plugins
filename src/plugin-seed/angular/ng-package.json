@@ -1,9 +1,0 @@
-{
-    "dest": "../../../packages/plugin-seed/angular",
-    "lib": {
-        "entryFile": "index.ts"
-    },
-    "allowedNonPeerDependencies": [
-        "."
-    ]
-}
