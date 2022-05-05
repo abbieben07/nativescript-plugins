@@ -20,7 +20,23 @@
             ],
             "@abbieben/flutterwave/*": [
                 "src/flutterwave/*"
+            ],
+            "@abbieben/paystack": [
+                "src/paystack"
+            ],
+            "@abbieben/paystack*": [
+                "src/paystack/*"
+            ],
+            "@abbieben/checkbox": [
+                "src/checkbox"
+            ],
+            "@abbieben/checkbox/*": [
+                "src/checkbox/*"
             ]
         },
     },
+    "include": [
+        "../src/**/*",
+        "../references.d.ts"
+    ],
 }
