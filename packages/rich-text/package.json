@@ -1,6 +1,6 @@
 {
     "name": "@abbieben/rich-text",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "description": "This is the description for the plugin seed. This is what will be published to NPM.",
     "main": "./rich-text",
     "sideEffects": false,
@@ -31,12 +31,12 @@
     "license": "Apache-2.0",
     "readmeFilename": "README.md",
     "dependencies": {
-        "currency.js": "^2.0.4",
+        "@nativescript/theme": "^3.0.2",
         "currency-symbol": "^1.0.6",
+        "currency.js": "^2.0.4",
         "imask": "^6.2.2",
         "libphonenumber-js": "^1.9.39",
-        "moment": "^2.29.1",
-        "@nativescript/theme": "^3.0.2"
+        "moment": "^2.29.1"
     },
     "publishConfig": {
         "access": "public"
