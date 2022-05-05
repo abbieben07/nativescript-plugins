@@ -1,14 +1,32 @@
 import { installRichText } from '@abbieben/rich-text';
-import Demo2 from './Demo2.vue';
-import Development from './Development.vue';
+import Checkbox from './Checkbox.vue';
+import Flutterwave from './Flutterwave.vue';
+import Paystack from './Paystack.vue';
 import RichText from './RichText.vue';
 
 export function installPlugin() {
-   installRichText()
+    installRichText()
 }
 
 export const demos = [
-    { name: 'Rich Text', path: "richtext", component: RichText },
-    { name: 'Demo 2', path: "demo2", component: Demo2 },
-    { name: 'Development', path: "development", component: Development }
+    {
+        name: 'Rich Text', 
+        path: "richtext", 
+        component: RichText
+    },
+    {
+        name: 'Flutterwave', 
+        path: "flutterwave", 
+        component: Flutterwave
+    },
+    {
+        name: 'Paystack', 
+        path: "paytack", 
+        component: Paystack
+    },
+    {
+        name: 'Checkbox', 
+        path: "checkbox", 
+        component: Checkbox
+    }
 ];

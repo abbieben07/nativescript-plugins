@@ -1,0 +1,2 @@
+pod 'FlutterwaveSDK', :inhibit_warnings => true
+platform :ios, '11.0'

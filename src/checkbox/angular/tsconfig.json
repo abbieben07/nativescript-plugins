@@ -1,0 +1,20 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "rootDir": "./",
+        "baseUrl": "./",
+        "plugins": [],
+        "paths": {
+            "@abbieben/checkbox": [
+                "../../plugin"
+            ]
+        }
+    },
+    "include": [
+        "./**/*.ts",
+        "../references.d.ts"
+    ],
+    "exclude": [
+        "../node_modules"
+    ]
+}

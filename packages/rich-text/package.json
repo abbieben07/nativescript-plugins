@@ -1,6 +1,6 @@
 {
     "name": "@abbieben/rich-text",
-    "version": "1.4.0",
+    "version": "1.5.0",
     "description": "This is the description for the plugin seed. This is what will be published to NPM.",
     "main": "./rich-text",
     "sideEffects": false,

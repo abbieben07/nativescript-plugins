@@ -2,6 +2,9 @@
     "name": "@nativescript-community/template-snippet",
     "version": "0.0.1",
     "dependencies": {
+        "@abbieben/checkbox": "../packages/checkbox",
+        "@abbieben/flutterwave": "file:../packages/flutterwave",
+        "@abbieben/paystack": "../packages/paystack",
         "@abbieben/rich-text": "file:../packages/rich-text",
         "@abbieben/webview-interface": "file:../packages/webview-interface",
         "@nativescript/template-blank-vue-ts": "file:../demo-vue"

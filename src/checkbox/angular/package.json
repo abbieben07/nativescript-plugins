@@ -1,0 +1,18 @@
+{
+    "name": "@abbieben/checkbox-angular",
+    "main": "index.js",
+    "ngPackage": {
+        "dest": "../../plugin/angular",
+        "lib": {
+            "entryFile": "index.ts",
+            "umdModuleIds": {
+                "@nativescript/core": "ns-core",
+                "@nativescript/angular": "ns-angular",
+                "@abbieben/checkbox": "ab-checkbox"
+            }
+        },
+        "allowedNonPeerDependencies": [
+            "."
+        ]
+    }
+}

@@ -1,0 +1,37 @@
+{
+    "name": "@abbieben/flutterwave",
+    "version": "1.2.0",
+    "description": "This is an easy plugin of the Flutterwave SDK for Android and iOS",
+    "main": "./flutterwave",
+    "sideEffects": false,
+    "typings": "./flutterwave.d.ts",
+    "nativescript": {
+        "platforms": {
+            "android": "6.0.0",
+            "ios": "6.0.0"
+        }
+    },
+    "keywords": [
+        "NativeScript",
+        "JavaScript",
+        "Android",
+        "iOS",
+        "Angular",
+        "React",
+        "Svelte",
+        "Vue",
+        "Flutterwave"
+    ],
+    "bugs": {
+        "url": "https://github.com/abbieben07/flutterwave/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/abbieben07/flutterwave"
+    },
+    "license": "Apache-2.0",
+    "readmeFilename": "README.md",
+    "publishConfig": {
+        "access": "public"
+    }
+}
