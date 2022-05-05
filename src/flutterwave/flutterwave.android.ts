@@ -87,7 +87,7 @@ export class Flutterwave extends FlutterwaveCommon {
                     .onStagingEnv(this.isStaging)
                     .allowSaveCardFeature(this.saveCard)
                     .shouldDisplayFee(this.shouldDisplayFee)
-                    .showStagingLabel(this.showStagingLabel)
+                    //.showStagingLabel(this.showStagingLabel)
                     .initialize();
             }).catch(e => reject(e))
         })
