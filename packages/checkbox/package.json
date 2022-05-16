@@ -1,6 +1,6 @@
 {
   "name": "@abbieben/checkbox",
-  "version": "2.0.3",
+  "version": "2.0.5",
   "description": "This is the description for the plugin seed. This is what will be published to NPM.",
   "main": "./checkbox",
   "sideEffects": false,
