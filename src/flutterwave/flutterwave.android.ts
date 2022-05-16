@@ -84,7 +84,7 @@ export class Flutterwave extends FlutterwaveCommon {
                     .acceptBarterPayments(this.barterPayments)
                     //.acceptFrancMobileMoneyPayments(this.francMobileMoneyPayments)
                     .isPreAuth(this.isPreAuth)
-                    .onStagingEnv(this.isStaging)
+                    //.onStagingEnv(this.isStaging)
                     .allowSaveCardFeature(this.saveCard)
                     .shouldDisplayFee(this.shouldDisplayFee)
                     //.showStagingLabel(this.showStagingLabel)

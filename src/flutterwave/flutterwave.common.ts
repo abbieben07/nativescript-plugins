@@ -32,9 +32,9 @@ export abstract class FlutterwaveCommon {
     public francMobileMoneyPayments: Boolean = false;
     public saveCard: Boolean = false;
     public isPreAuth: Boolean = false;
-    public isStaging: Boolean = true;
-    public shouldDisplayFee: Boolean = true;
-    public showStagingLabel: Boolean = true;
+    public isStaging: Boolean = false;
+    public shouldDisplayFee: Boolean = false;
+    public showStagingLabel: Boolean = false;
 
     validate(): Promise<Response> {
         return new Promise((resolve, reject) => {

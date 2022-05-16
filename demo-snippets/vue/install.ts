@@ -10,23 +10,23 @@ export function installPlugin() {
 
 export const demos = [
     {
-        name: 'Rich Text', 
-        path: "richtext", 
+        name: 'Rich Text',
+        path: "richtext",
         component: RichText
     },
     {
-        name: 'Flutterwave', 
-        path: "flutterwave", 
+        name: 'Flutterwave',
+        path: "flutterwave",
         component: Flutterwave
     },
     {
-        name: 'Paystack', 
-        path: "paytack", 
+        name: 'Paystack',
+        path: "paytack",
         component: Paystack
     },
     {
-        name: 'Checkbox', 
-        path: "checkbox", 
+        name: 'Checkbox',
+        path: "checkbox",
         component: Checkbox
     }
 ];

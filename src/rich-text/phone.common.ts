@@ -1,6 +1,6 @@
 //@ts-nocheck
 
-import { AsYouType, CountryCode, getCountryCallingCode } from 'libphonenumber-js'
+import { AsYouType, CountryCode, getCountryCallingCode } from 'libphonenumber-js';
 
 //@ts-ignore
 String.prototype.decode = function () {
@@ -17,9 +17,8 @@ String.prototype.decode = function () {
 export function FormatPhone(phone: string, country: CountryCode): string {
     const formatter = new AsYouType(country);
     const code = `+${getCountryCallingCode(country)}`;
-    if (phone.match())
-        return;
+    if (phone.match()) return;
     const result = formatter.input(phone);
-    console.log("before", phone, "after", result)
+    //console.log("before", phone, "after", result)
     return result;
 }

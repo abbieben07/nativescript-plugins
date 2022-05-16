@@ -36,7 +36,10 @@
         },
     },
     "include": [
-        "../src/**/*",
-        "../references.d.ts"
+        "src/**/*",
+        "references.d.ts"
+    ],
+    "exclude": [
+        "node_modules"
     ],
 }
