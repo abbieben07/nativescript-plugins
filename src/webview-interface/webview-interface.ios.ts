@@ -1,4 +1,4 @@
-import { Device, WebView } from "@nativescript/core"
+import { Device, WebView } from "@nativescript/core";
 import { WebViewInterfaceCommon } from "./webview-interface.common";
 
 export class WebViewInterface extends WebViewInterfaceCommon {
@@ -28,7 +28,7 @@ export class WebViewInterface extends WebViewInterfaceCommon {
         config.userContentController.addScriptMessageHandlerName(JavascriptInterface.init(new WeakRef(this)), "iOS");
     }
 
-    runJSFunc(fname: string, arg: Object, callback: (data: Object[] | Object) => void) {
+    call(fname: string, arg: Object, callback: (data: Object[] | Object) => void) {
         const params = JSON.stringify(arg);
         if (callback) {
             // @ts-ignore

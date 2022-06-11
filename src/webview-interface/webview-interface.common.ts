@@ -42,7 +42,6 @@ export class WebViewInterfaceCommon implements WebViewInterface {
         this.webView.once(eventName, callback)
     }
 
-    callFunction(fname: string, callback: () => void) {
-
+    call(fname: string, arg: Object, callback: (data: Object[] | Object) => void) {
     }
 }

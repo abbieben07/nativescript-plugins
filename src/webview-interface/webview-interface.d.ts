@@ -1,4 +1,3 @@
-
 export declare class WebViewInterface {
     declare parseJSON(data: string): any
 
@@ -9,4 +8,6 @@ export declare class WebViewInterface {
     declare off(eventName: string, callback: () => void): void
 
     declare once(eventName: string, callback: () => void): void
+
+    declare call(fname: string, arg: Object, callback: (data: Object[] | Object) => void): void
 }

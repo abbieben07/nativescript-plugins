@@ -26,14 +26,14 @@ export class WebViewInterface extends WebViewInterfaceCommon {
         (this.webView.nativeViewProtected as android.webkit.WebView).addJavascriptInterface(JSInterface, 'Android');
     }
 
-    runJSFunc(fname: string, arg: Object, callback: (data: Object[] | Object) => void) {
+    call(fname: string, arg: Object, callback: (data: Object[] | Object) => void) {
+        //super.call(str)
         const params = JSON.stringify(arg);
         if (callback) {
             // @ts-ignore
             this.once(fname, ({ data }) => callback(data));
         }
         const caller = `Bridge.call('${fname}', '${params}');`;
-        console.log(caller);
         if (Device.sdkVersion >= '19') {
             (this.webView.nativeView as android.webkit.WebView).evaluateJavascript(caller, null);
         } else {

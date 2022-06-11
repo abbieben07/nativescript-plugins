@@ -32,14 +32,14 @@
         "watch": "npm run tsc -- -w"
     },
     "dependencies": {
+        "@abbieben/webview-interface": "^2.0.5",
         "@nativescript-community/plugin-seed-tools": "file:tools",
         "@nativescript/theme": "^3.0.2",
         "currency-symbol": "^1.0.6",
         "currency.js": "^2.0.4",
         "imask": "^6.4.2",
         "libphonenumber-js": "^1.9.49",
-        "moment": "^2.29.1",
-        "@abbieben/webview-interface": "^1.0.2"
+        "moment": "^2.29.1"
     },
     "ntl": {
         "descriptions": {
@@ -54,9 +54,13 @@
     "dependenciesMeta": {
         "@nativescript-community/plugin-seed-tools": {
             "injected": true
+        },
+        "@abbieben/webview-interface": {
+            "injected": true
         }
     },
     "devDependencies": {
+        "@types/webpack": "^5.28.0",
         "lerna": "^4.0.0",
         "ts-node": "^10.4.0"
     }
