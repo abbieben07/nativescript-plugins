@@ -1,6 +1,6 @@
 {
     "name": "@abbieben/paystack",
-    "version": "2.0.5",
+    "version": "2.0.6",
     "description": "This is the description for the plugin seed. This is what will be published to NPM.",
     "main": "./paystack",
     "sideEffects": false,
