@@ -1,21 +1,22 @@
-import { EditableTextBase, View } from "@nativescript/core";
-import { textProperty } from "@nativescript/core/ui/text-base";
-import { FormatMask } from "./mask.common";
+// @ts-nocheck
+import { EditableTextBase, View } from "@nativescript/core"
+import { textProperty } from "@nativescript/core/ui/text-base"
+import { FormatMask } from "./mask.common"
 
 export const MaskedTextField = (target: EditableTextBase, oldvalue: string, value: string) => {
     target.once(View.loadedEvent, _ => {
-        const view: android.widget.EditText = target.nativeTextViewProtected;
+        const view: android.widget.EditText = target.nativeTextViewProtected
 
         //@ts-ignore
         view.removeTextChangedListener(view.listener)
-        view.setText(FormatMask(view.getText().toString(), value));
+        view.setText(FormatMask(view.getText().toString(), value))
 
         //@ts-ignore
-        if (target.textWatcher) view.removeTextChangedListener(target.textWatcher);
+        if (target.textWatcher) view.removeTextChangedListener(target.textWatcher)
         //@ts-ignore
-        target.textWatcher = new MaskTextWatcher(new WeakRef(target), value);
+        target.textWatcher = new MaskTextWatcher(new WeakRef(target), value)
         //@ts-ignore
-        view.addTextChangedListener(target.textWatcher);
+        view.addTextChangedListener(target.textWatcher)
     })
 }
 
@@ -23,8 +24,8 @@ export const MaskedTextField = (target: EditableTextBase, oldvalue: string, valu
 @Interfaces([android.text.TextWatcher])
 class MaskTextWatcher extends java.lang.Object implements android.text.TextWatcher {
     constructor(private owner: WeakRef<EditableTextBase>, private mask: string) {
-        super();
-        return global.__native(this);
+        super()
+        return global.__native(this)
     }
 
     afterTextChanged(s: any) { }
@@ -32,15 +33,15 @@ class MaskTextWatcher extends java.lang.Object implements android.text.TextWatch
     beforeTextChanged(s: string, start: number, before: number, count: number) { }
 
     onTextChanged(s: string, start: number, before: number, count: number) {
-        const owner = this.owner.get();
-        const editText: android.widget.EditText = owner.nativeTextViewProtected;
-        editText.removeTextChangedListener(this);
+        const owner = this.owner.get()
+        const editText: android.widget.EditText = owner.nativeTextViewProtected
+        editText.removeTextChangedListener(this)
 
-        const formatted = FormatMask(s.toString(), this.mask);
-        editText.setText(formatted);
-        editText.setSelection(formatted.length);
+        const formatted = FormatMask(s.toString(), this.mask)
+        editText.setText(formatted)
+        editText.setSelection(formatted.length)
         textProperty.nativeValueChange(owner, formatted)
 
-        editText.addTextChangedListener(this);
+        editText.addTextChangedListener(this)
     }
 }

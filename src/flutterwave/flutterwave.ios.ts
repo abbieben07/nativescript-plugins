@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Frame } from '@nativescript/core'
 import { FlutterwaveCommon, Response } from './flutterwave.common'
 export class Flutterwave extends FlutterwaveCommon {

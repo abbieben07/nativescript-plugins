@@ -1,5 +1,6 @@
-
-
+/**
+ * @param {typeof import("@nativescript/webpack")} webpack
+ */
 module.exports = webpack => {
     webpack.Utils.addCopyRule({
         from: '@abbieben/webview-interface/www',
