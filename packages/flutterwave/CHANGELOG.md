@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.7](https://github.com/abbieben07/flutterwave/compare/v2.0.6...v2.0.7) (2022-10-18)
+
+**Note:** Version bump only for package @abbieben/flutterwave
+
+
+
+
+
 ## [2.0.6](https://github.com/abbieben07/flutterwave/compare/v2.0.5...v2.0.6) (2022-06-11)
 
 **Note:** Version bump only for package @abbieben/flutterwave
