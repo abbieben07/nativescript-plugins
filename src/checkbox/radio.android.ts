@@ -3,6 +3,7 @@ import { checkedProperty, RadioCommon, valueProperty } from './radio.common'
 import { RadioGroup, selectedProperty } from './radiogroup'
 
 export class Radio extends RadioCommon {
+    // @ts-ignore
     nativeView: android.widget.RadioButton
 
     public createNativeView(): Object {
