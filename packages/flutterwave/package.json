@@ -1,6 +1,6 @@
 {
     "name": "@abbieben/flutterwave",
-    "version": "2.0.7",
+    "version": "2.0.8",
     "description": "This is an easy plugin of the Flutterwave SDK for Android and iOS",
     "main": "./flutterwave",
     "sideEffects": false,
