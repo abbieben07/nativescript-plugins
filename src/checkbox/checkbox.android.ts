@@ -1,6 +1,7 @@
 // @ts-nocheck
 import { CheckboxCommon, checkedProperty } from './checkbox.common'
 export class Checkbox extends CheckboxCommon {
+    // @ts-ignore
     nativeView: android.widget.CheckBox
 
     public createNativeView(): Object {
