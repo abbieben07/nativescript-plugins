@@ -13,6 +13,7 @@
 </template>
 
 <script>
+// @ts-nocheck
 import { Flutterwave } from '@abbieben/flutterwave';
 export default {
 	methods: {

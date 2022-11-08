@@ -13,10 +13,10 @@
     </body>
 
     <script src="https://js.paystack.co/v2/inline.js"></script>
-    <script src="../www/bridge.js"></script>
+    <script src=".../../webview-interface/www/bridge.js"></script>
     <script>
         function makePayment({ key, email, amount, ref, channels, label }) {
-            const paystack = new PaystackPop();
+            const paystack = new PaystackPop()
             paystack.newTransaction({
                 key,
                 email,
@@ -30,8 +30,7 @@
                 onCancel: () => {
                     Bridge.callback("paystack", { code: 2, message: "Cancelled" })
                 }
-            });
-
+            })
         }
     </script>
 
