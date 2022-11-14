@@ -18,7 +18,7 @@ import { Flutterwave } from '@abbieben/flutterwave';
 export default {
 	methods: {
 		flutterwave() {
-			let flutterwave = new Flutterwave();
+			const flutterwave = new Flutterwave();
 			flutterwave.countryCode = 'NG';
 			flutterwave.currency = 'NGN';
 			flutterwave.amount = 10000 / 100;

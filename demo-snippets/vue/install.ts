@@ -1,4 +1,4 @@
-//@ts-nocheck
+// @ts-nocheck
 import { installRichText } from '@abbieben/rich-text';
 import Checkbox from './Checkbox.vue';
 import Flutterwave from './Flutterwave.vue';
