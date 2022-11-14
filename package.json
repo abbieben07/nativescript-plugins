@@ -58,12 +58,13 @@
         }
     },
     "devDependencies": {
+        "@nativescript/types": "^8.3.1",
         "@types/webpack": "^5.28.0",
         "lerna": "^4.0.0",
         "ts-node": "^10.4.0"
     },
     "engines": {
-        "npm": "please use yarn or pnpm",
+        "npm": ">=8",
         "yarn": ">= 1.19.1",
         "pnpm": ">= 7.0.0"
     }

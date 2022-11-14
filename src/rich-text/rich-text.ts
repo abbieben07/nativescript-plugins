@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { EditableTextBase, Property } from '@nativescript/core';
 import { isNullOrUndefined } from '@nativescript/core/utils/types';
 import { CurrencyTextField } from './currency';
@@ -26,19 +27,19 @@ export const dateProperty = new Property<EditableTextBase, string>({
 
 export const maxDateProperty = new Property<EditableTextBase, string>({
     name: 'maxDate',
-    // @ts-ignore
+
     valueChanged: (target, oldvalue, value) => (target.maxDate = value)
 });
 
 export const minDateProperty = new Property<EditableTextBase, string>({
     name: 'minDate',
-    // @ts-ignore
+
     valueChanged: (target, oldvalue, value) => (target.minDate = value)
 });
 
 export const dateTitleProperty = new Property<EditableTextBase, string>({
     name: 'dateTitle',
-    // @ts-ignore
+
     valueChanged: (target, oldvalue, value) => (target.dateTitle = value)
 });
 

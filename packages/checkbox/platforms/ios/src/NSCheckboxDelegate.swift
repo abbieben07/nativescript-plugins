@@ -1,6 +1,6 @@
 import Foundation
 
-@objcMembers
+@objc
 public protocol NSCheckboxDelegate {
   func onCheckChange(_ checkbox: Any)
 }

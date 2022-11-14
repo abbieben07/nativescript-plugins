@@ -1,6 +1,7 @@
+// @ts-nocheck
 import currencySymbol from 'currency-symbol';
 import currency from 'currency.js';
-//@ts-ignore
+
 String.prototype.decode = function () {
     const map = { gt: '>' /* , … */ };
     return this.replace(/&(#(?:x[0-9a-f]+|\d+)|[a-z]+);?/gi, ($0, $1) => {

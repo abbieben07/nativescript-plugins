@@ -1,44 +1,43 @@
 // @ts-nocheck
-import { Device, WebView } from '@nativescript/core'
-import { WebViewInterfaceCommon } from './webview-interface.common'
 
-// @ts-ignore
-declare var com: any
+import { Device, WebView } from '@nativescript/core';
+import { WebViewInterfaceCommon } from './webview-interface.common';
+
+declare var com: any;
 
 export class WebViewInterface extends WebViewInterfaceCommon {
     constructor(webView: WebView) {
-        super(webView)
-        this.initWebView()
+        super(webView);
+        this.initWebView();
     }
 
     initWebView() {
         if (this.webView.isLoaded) {
-            this.setupWebView()
+            this.setupWebView();
         } else {
-            this.webView.once(WebView.loadedEvent, () => this.setupWebView())
+            this.webView.once(WebView.loadedEvent, () => this.setupWebView());
         }
     }
 
     public setupWebView() {
         (this.webView.nativeViewProtected as android.webkit.WebView).getSettings().setJavaScriptEnabled(true);
         (this.webView.nativeViewProtected as android.webkit.WebView).getSettings().setAllowFileAccess(true);
-        (this.webView.nativeViewProtected as android.webkit.WebView).getSettings().setAllowContentAccess(true)
+        (this.webView.nativeViewProtected as android.webkit.WebView).getSettings().setAllowContentAccess(true);
         const JSInterface = new JavascriptInterface(new WeakRef(this));
-        (this.webView.nativeViewProtected as android.webkit.WebView).addJavascriptInterface(JSInterface, 'Android')
+        (this.webView.nativeViewProtected as android.webkit.WebView).addJavascriptInterface(JSInterface, 'Android');
     }
 
     call(fname: string, arg: Object, callback: (data: Object[] | Object) => void) {
         //super.call(str)
-        const params = JSON.stringify(arg)
+        const params = JSON.stringify(arg);
         if (callback) {
-            // @ts-ignore
-            this.once(fname, ({ data }) => callback(data))
+            this.once(fname, ({ data }) => callback(data));
         }
-        const caller = `Bridge.call('${fname}', '${params}');`
+        const caller = `Bridge.call('${fname}', '${params}');`;
         if (Device.sdkVersion >= '19') {
-            (this.webView.nativeView as android.webkit.WebView).evaluateJavascript(caller, null)
+            (this.webView.nativeView as android.webkit.WebView).evaluateJavascript(caller, null);
         } else {
-            (this.webView.nativeView as android.webkit.WebView).loadUrl(`javascript: ${caller}`)
+            (this.webView.nativeView as android.webkit.WebView).loadUrl(`javascript: ${caller}`);
         }
     }
 }
@@ -46,13 +45,13 @@ export class WebViewInterface extends WebViewInterfaceCommon {
 @NativeClass()
 class JavascriptInterface extends com.novacio.webview.WebviewInterface {
     constructor(private webViewInterface: WeakRef<WebViewInterface>) {
-        super()
-        return global.__native(this)
+        super();
+        return global.__native(this);
     }
 
     public _emit(eventName: string, jsonData: string) {
-        const webViewInterface = this.webViewInterface.get()
-        const data = webViewInterface.parseJSON(jsonData)
-        webViewInterface.emit(eventName, data)
+        const webViewInterface = this.webViewInterface.get();
+        const data = webViewInterface.parseJSON(jsonData);
+        webViewInterface.emit(eventName, data);
     }
 }

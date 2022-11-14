@@ -1,8 +1,6 @@
-// @ts-ignore
 declare const Android, iOS;
 
 class Bridge {
-
     static parseJSON(data: string): Object[] | Object {
         let result;
         try {
@@ -24,20 +22,20 @@ class Bridge {
     }
 
     public static call(name: string, data: string, callback?: Function) {
-        console.log("Bridge", name, data);
+        console.log('Bridge', name, data);
         const fn: Function = window[name];
         const params = this.parseJSON(data);
-        if (typeof fn === "function") fn(params);
+        if (typeof fn === 'function') fn(params);
     }
 
     public static callback(name: string, data: Object | Object[]) {
         const params = this.stringJSON(data);
         if (Android) {
-            Android.emit(name, params)
+            Android.emit(name, params);
         } else if (iOS) {
-            iOS.postMessage({ name, data })
+            iOS.postMessage({ name, data });
         } else {
-            console.error("Cannot find Bridge object")
+            console.error('Cannot find Bridge object');
         }
     }
 }
