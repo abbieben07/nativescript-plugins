@@ -1,33 +1,35 @@
-// @ts-nocheck
-import { installRichText } from '@abbieben/rich-text';
-import Checkbox from './Checkbox.vue';
-import Flutterwave from './Flutterwave.vue';
-import Paystack from './Paystack.vue';
-import RichText from './RichText.vue';
+import Checkbox from '@abbieben/checkbox/vue'
+import { installRichText } from '@abbieben/rich-text'
+import Vue from 'nativescript-vue'
+import CheckboxPage from './Checkbox.vue'
+import FlutterwavePage from './Flutterwave.vue'
+import PaystackPage from './Paystack.vue'
+import RichTextPage from './RichText.vue'
 
 export function installPlugin() {
-    installRichText();
+    installRichText()
+    Vue.use(Checkbox)
 }
 
 export const demos = [
     {
         name: 'Rich Text',
         path: 'richtext',
-        component: RichText
+        component: RichTextPage
     },
     {
         name: 'Flutterwave',
         path: 'flutterwave',
-        component: Flutterwave
+        component: FlutterwavePage
     },
     {
         name: 'Paystack',
         path: 'paytack',
-        component: Paystack
+        component: PaystackPage
     },
     {
         name: 'Checkbox',
         path: 'checkbox',
-        component: Checkbox
+        component: CheckboxPage
     }
-];
+]

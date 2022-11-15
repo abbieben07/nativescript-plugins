@@ -53,9 +53,9 @@ export default {
 			r2: false,
 			r3: true,
 			form: 1
-		};
+		}
 	}
-};
+}
 </script>
 
 <style lang="scss" scoped>
