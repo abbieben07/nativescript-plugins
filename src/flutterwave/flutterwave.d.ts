@@ -1,36 +1,42 @@
-import { Response } from './flutterwave.common';
+import { Response } from './flutterwave.common'
 
 export declare class Flutterwave {
-    country: String;
-    amount: String;
-    currency: String;
-    firstName: String;
-    lastName: String;
-    email: String;
-    publicKey: String;
-    encryptionKey: String;
-    narration?: String;
-    txRef: String;
-    phoneNumber?: String;
-    accountPayments?: Boolean;
-    cardPayments?: Boolean;
-    mpesaPayments?: Boolean;
-    ghMobileMoneyPayments?: Boolean;
-    ugMobileMoneyPayment?: Boolean;
-    zmMobileMoneyPayments?: Boolean;
-    rwfMobileMoneyPayments?: Boolean;
-    saBankPayments?: Boolean;
-    ukPayments?: Boolean;
-    achPayments?: Boolean;
-    bankTransferPayments?: Boolean;
-    ussdPayments?: Boolean;
-    barterPayments?: Boolean;
-    francMobileMoneyPayments?: Boolean;
-    saveCard?: Boolean;
-    isPreAuth?: Boolean;
-    isStaging?: Boolean;
-    shouldDisplayFee?: Boolean;
-    showStagingLabel?: Boolean;
+	public static PAYMENT_SUCCESS: string = 'success'
+	public static PAYMENT_ERROR: string = 'error'
+	public static PAYMENT_CANCELLED: string = 'cancelled'
 
-    pay(): Promise<Response>;
+	country!: string
+	amount!: number
+	currency!: string
+	firstName?: string
+	lastName?: string
+	email!: string
+	Key!: string
+	encryptionKey!: string
+	narration!: string
+	txRef!: string
+	phoneNumber!: string
+	payments: {
+		account?: boolean
+		card?: boolean
+		mpesa?: boolean
+		ghMobileMoney?: boolean
+		ugMobileMoney?: boolean
+		zmMobileMoney?: boolean
+		rwfMobileMoney?: boolean
+		saBank?: boolean
+		uk?: boolean
+		ach?: boolean
+		bankTransfer?: boolean
+		ussd?: boolean
+		barter?: boolean
+		francMobileMoney?: boolean
+	}
+	saveCard?: boolean
+	isPreAuth?: boolean
+	isStaging?: boolean
+	shouldDisplayFee?: boolean
+	showStagingLabel?: boolean
+
+	pay(): Promise<Response>
 }

@@ -14,7 +14,7 @@ func jsonToString(_ jsonData: FlutterwaveDataResponse?) -> String {
 @objcMembers
 public class NSFlutterwave: UIViewController, FlutterwavePayProtocol {
 
-  public var amount: String?
+  public var amount: Number?
   public var country: String?
   public var currencyCode: String?
   public var email: String? = ""

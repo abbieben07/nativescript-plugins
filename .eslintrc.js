@@ -1,5 +1,5 @@
 module.exports = {
-	extends: ['./tools/.eslintrc.js', 'eslint:recommended', 'plugin:vue/recommended'],
+	extends: ['./tools/.eslintrc.js', 'eslint:recommended', 'plugin:vue/recommended', 'prettier:recommended'],
 	parser: 'vue-eslint-parser',
 	parserOptions: {
 		parser: '@typescript-eslint/parser',
@@ -18,7 +18,7 @@ module.exports = {
 	globals: {
 		__static: true
 	},
-	plugins: ['vue'],
+	plugins: ['vue', 'prettier'],
 	rules: {
 		'vue/max-attributes-per-line': [
 			'error',
@@ -76,20 +76,17 @@ module.exports = {
 				ignore: []
 			}
 		],
-		'no-unused-vars': 'off' /* [
-			'error',
-			{
-				vars: 'all',
-				args: 'after-used',
-				ignoreRestSiblings: false,
-				varsIgnorePattern: '^_',
-				argsIgnorePattern: '^_',
-			},
-		], */,
+		'no-unused-vars': 'off',
 		semi: 'off',
 		'@typescript-eslint/semi': 'off',
 		indent: 'off',
-		'@typescript-eslint/indent': 'off'
+		'@typescript-eslint/indent': 'off',
+		'prettier/prettier': [
+			'error',
+			{
+				endOfLine: 'off'
+			}
+		]
 	},
 	overrides: [
 		{

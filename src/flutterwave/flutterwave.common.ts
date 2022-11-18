@@ -1,53 +1,55 @@
-import { isNullOrUndefined } from '@nativescript/core/utils/types';
+import { isNullOrUndefined } from '@nativescript/core/utils/types'
 
 export abstract class FlutterwaveCommon {
-    public static PAYMENT_SUCCESS: String = 'success';
-    public static PAYMENT_ERROR: String = 'error';
-    public static PAYMENT_CANCELLED: String = 'cancelled';
+	public static PAYMENT_SUCCESS: string = 'success'
+	public static PAYMENT_ERROR: string = 'error'
+	public static PAYMENT_CANCELLED: string = 'cancelled'
 
-    public country: String;
-    public amount: String;
-    public currency: String;
-    public firstName: String;
-    public lastName: String;
-    public email: String;
-    public publicKey: String;
-    public encryptionKey: String;
-    public narration: String = '';
-    public txRef: String;
-    public phoneNumber: String = '';
-    public accountPayments: Boolean = false;
-    public cardPayments: Boolean = false;
-    public mpesaPayments: Boolean = false;
-    public ghMobileMoneyPayments: Boolean = false;
-    public ugMobileMoneyPayment: Boolean = false;
-    public zmMobileMoneyPayments: Boolean = false;
-    public rwfMobileMoneyPayments: Boolean = false;
-    public saBankPayments: Boolean = false;
-    public ukPayments: Boolean = false;
-    public achPayments: Boolean = false;
-    public bankTransferPayments: Boolean = false;
-    public ussdPayments: Boolean = false;
-    public barterPayments: Boolean = false;
-    public francMobileMoneyPayments: Boolean = false;
-    public saveCard: Boolean = false;
-    public isPreAuth: Boolean = false;
-    public isStaging: Boolean = false;
-    public shouldDisplayFee: Boolean = false;
-    public showStagingLabel: Boolean = false;
+	public country!: string
+	public amount!: number
+	public currency!: string
+	public firstName?: string
+	public lastName?: string
+	public email!: string
+	public publicKey!: string
+	public encryptionKey!: string
+	public narration!: string
+	public txRef!: string
+	public phoneNumber!: string
+	public payments: {
+		account?: boolean
+		card?: boolean
+		mpesa?: boolean
+		ghMobileMoney?: boolean
+		ugMobileMoney?: boolean
+		zmMobileMoney?: boolean
+		rwfMobileMoney?: boolean
+		saBank?: boolean
+		uk?: boolean
+		ach?: boolean
+		bankTransfer?: boolean
+		ussd?: boolean
+		barter?: boolean
+		francMobileMoney?: boolean
+	}
+	public saveCard?: boolean
+	public isPreAuth?: boolean
+	public isStaging?: boolean
+	public shouldDisplayFee?: boolean
+	public showStagingLabel?: boolean
 
-    validate(): Promise<Response> {
-        return new Promise((resolve, reject) => {
-            for (const key in this) {
-                if (isNullOrUndefined(this[key])) {
-                    return reject(new Error(`the Property "${key}" cannot be undefined`));
-                }
-            }
-            return resolve(null);
-        });
-    }
+	validate(): Promise<Response> {
+		return new Promise((resolve, reject) => {
+			for (const key in this) {
+				if (isNullOrUndefined(this[key])) {
+					return reject(new Error(`the Property "${key}" cannot be undefined`))
+				}
+			}
+			return resolve(null)
+		})
+	}
 }
 
 export class Response {
-    constructor(private status: String, private data: any, private reference: String = '') { }
+	constructor(private status: string, private data: any, private reference: string = '') {}
 }
