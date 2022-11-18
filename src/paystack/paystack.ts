@@ -1,4 +1,4 @@
-//@ts-ignore
+// @ts-ignore
 import { WebViewInterface } from '@abbieben/webview-interface'
 import { Frame, isAndroid, Page, WebView } from '@nativescript/core'
 
@@ -18,15 +18,11 @@ export class Paystack extends WebView {
 		bank_transfer?: boolean
 	}
 
-	channels: string[] = []
+	channels!: string[]
 
 	validate(): Promise<any> {
 		return new Promise((resolve, reject) => {
-			// TODO
-			// @ts-ignore
-			this.channels = Object.entries(this.payments)
-				.filter((v) => v)
-				.keys()
+			this.channels = Object.keys(Object.entries(this.payments).filter((v) => v))
 
 			if (this.channels.length === 0) {
 				return reject(new Error('A Payment Channel must be selected'))
@@ -39,7 +35,7 @@ export class Paystack extends WebView {
 		return new Promise((resolve, reject) => {
 			this.validate()
 				.then(() => {
-					this.src = '~/paystack/www/index.html'
+					this.src = '~/www/paystack.html'
 					const page = new Page()
 					page.actionBarHidden = true
 					page.backgroundSpanUnderStatusBar = false

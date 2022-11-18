@@ -34,7 +34,6 @@
         "doc": "node tools/builddoc.mjs && git add docs/* && git commit -m \"chore:doc\""
     },
     "dependencies": {
-        "@abbieben/webview-interface": "file:packages/webview-interface",
         "@nativescript-community/plugin-seed-tools": "file:tools",
         "@nativescript/theme": "^3.0.2",
         "currency-symbol": "^1.0.6",
