@@ -1,21 +1,21 @@
 import { Response } from './flutterwave.common'
 
 export declare class Flutterwave {
-	public static PAYMENT_SUCCESS: string = 'success'
-	public static PAYMENT_ERROR: string = 'error'
-	public static PAYMENT_CANCELLED: string = 'cancelled'
+	public static PAYMENT_SUCCESS: string
+	public static PAYMENT_ERROR: string
+	public static PAYMENT_CANCELLED: string
 
-	country!: string
-	amount!: number
-	currency!: string
+	country: string
+	amount: number
+	currency: string
 	firstName?: string
 	lastName?: string
-	email!: string
-	Key!: string
-	encryptionKey!: string
-	narration!: string
-	txRef!: string
-	phoneNumber!: string
+	email: string
+	Key: string
+	encryptionKey: string
+	narration: string
+	txRef: string
+	phoneNumber: string
 	payments: {
 		account?: boolean
 		card?: boolean
