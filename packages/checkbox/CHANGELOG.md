@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.1](https://github.com/abbieben07/checkbox/compare/v3.0.0...v3.0.1) (2022-11-19)
+
+**Note:** Version bump only for package @abbieben/checkbox
+
+
+
+
+
 # [3.0.0](https://github.com/abbieben07/checkbox/compare/v2.0.14...v3.0.0) (2022-11-18)
 
 **Note:** Version bump only for package @abbieben/checkbox
