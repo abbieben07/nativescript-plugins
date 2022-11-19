@@ -1,6 +1,6 @@
 {
     "name": "@abbieben/flutterwave",
-    "version": "3.0.4",
+    "version": "3.0.5",
     "description": "This is an easy plugin of the Flutterwave SDK for Android and iOS",
     "main": "./flutterwave",
     "sideEffects": false,
@@ -34,5 +34,5 @@
     "publishConfig": {
         "access": "public"
     },
-    "gitHead": "67fde2ea9ff48e3e5e73fddae0915194f125a353"
+    "gitHead": "96ca3af0f36b1d732bf048620d64d2e00ebaa276"
 }
