@@ -1,6 +1,6 @@
 {
     "name": "@abbieben/paystack",
-    "version": "3.0.1",
+    "version": "3.0.2",
     "description": "This is the description for the plugin seed. This is what will be published to NPM.",
     "main": "./paystack",
     "sideEffects": false,
@@ -31,7 +31,7 @@
     "license": "Apache-2.0",
     "readmeFilename": "README.md",
     "dependencies": {
-        "@abbieben/webview-interface": "^3.0.1"
+        "@abbieben/webview-interface": "^3.0.2"
     },
     "publishConfig": {
         "access": "public"
