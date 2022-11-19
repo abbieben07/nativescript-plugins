@@ -11,7 +11,7 @@ export declare class Flutterwave {
 	firstName?: string
 	lastName?: string
 	email: string
-	Key: string
+	publicKey: string
 	encryptionKey: string
 	narration: string
 	txRef: string

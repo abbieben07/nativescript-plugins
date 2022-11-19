@@ -1,6 +1,7 @@
 import { isNullOrUndefined } from '@nativescript/core/utils/types'
+import { Flutterwave } from './flutterwave'
 
-export abstract class FlutterwaveCommon {
+export abstract class FlutterwaveCommon implements Flutterwave {
 	public static PAYMENT_SUCCESS: string = 'success'
 	public static PAYMENT_ERROR: string = 'error'
 	public static PAYMENT_CANCELLED: string = 'cancelled'
@@ -47,6 +48,10 @@ export abstract class FlutterwaveCommon {
 			}
 			return resolve(null)
 		})
+	}
+
+	pay(): Promise<Response> {
+		throw new Error('Method not implemented.')
 	}
 }
 
