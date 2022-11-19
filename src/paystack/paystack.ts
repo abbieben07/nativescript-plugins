@@ -22,7 +22,7 @@ export class Paystack extends WebView {
 
 	validate(): Promise<any> {
 		return new Promise((resolve, reject) => {
-			this.channels = Object.keys(Object.entries(this.payments).filter((v) => v))
+			this.channels = Object.entries(this.payments).map(([k, v]) => k)
 
 			if (this.channels.length === 0) {
 				return reject(new Error('A Payment Channel must be selected'))

@@ -27,7 +27,8 @@ export class Flutterwave extends FlutterwaveCommon {
 					this.controller.txRef = this.txRef
 					this.controller.isPreAuth = this.isPreAuth
 					this.controller.isStaging = this.isStaging
-					this.controller.paymentOptionsToExclude = Object.keys(Object.entries(this.payments).filter((v) => !v))
+					const payments = ['card', 'account', 'bank_transfer', 'uk']
+					this.controller.paymentOptionsToExclude = payments.filter((v) => this.payments[v])
 					this.controller.meta = [{ metaname: 'sdk', metavalue: 'ios' }]
 					this.controller.delegate = FlutterwaveDelegator.init(resolve, reject)
 					const view = Frame.topmost().currentPage.ios as UIViewController
