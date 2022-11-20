@@ -34,7 +34,7 @@ export class WebViewInterface extends WebViewInterfaceCommon {
 			this.once(fname, ({ data }: any) => callback(data))
 		}
 		const caller = `Bridge.call('${fname}', '${params}');`
-		;(this.webView.nativeViewProtected as WKWebView).evaluateJavaScriptCompletionHandler('happy()', (data, error) => console.log('Return', data, 'Error', error))
+		;(this.webView.nativeViewProtected as WKWebView).evaluateJavaScriptCompletionHandler(caller, (data, error) => console.log('Return', data, 'Error', error))
 	}
 }
 

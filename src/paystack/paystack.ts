@@ -57,14 +57,13 @@ export class Paystack extends WebView {
 						channels: this.channels
 					}
 					const callback = ({ code, transaction }) => {
-						console.log('successful')
 						Frame.topmost().goBack()
 						switch (code) {
-							case PaystackResponse.Success:
+							case PaystackResponse.SUCCESS:
 								return resolve(transaction)
-							case PaystackResponse.Error:
+							case PaystackResponse.ERROR:
 								return resolve(new Error('i dunno'))
-							case PaystackResponse.Cancelled:
+							case PaystackResponse.CANCELLED:
 								return reject('The User cancelled the ')
 						}
 					}
@@ -76,7 +75,7 @@ export class Paystack extends WebView {
 }
 
 export enum PaystackResponse {
-	Success = 'success',
-	Error = 'error',
-	Cancelled = 'cancelled'
+	SUCCESS = 'success',
+	ERROR = 'error',
+	CANCELLED = 'cancelled'
 }
