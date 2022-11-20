@@ -9,29 +9,27 @@
     </head>
 
     <body>
-
+        <script src="https://js.paystack.co/v2/inline.js"></script>
+        <script src="./bridge.js"></script>
+        <script>
+            function makePayment({ key, email, amount, ref, channels, label }) {
+                const paystack = new PaystackPop()
+                paystack.newTransaction({
+                    key,
+                    email,
+                    amount,
+                    ref,
+                    channels,
+                    label,
+                    onSuccess: (transaction) => {
+                        Bridge.callback("paystack", { code: 0, message: "Successful", transaction })
+                    },
+                    onCancel: () => {
+                        Bridge.callback("paystack", { code: 2, message: "Cancelled" })
+                    }
+                })
+            }
+        </script>
     </body>
-
-    <script src="https://js.paystack.co/v2/inline.js"></script>
-    <script src=".../../webview-interface/www/bridge.js"></script>
-    <script>
-        function makePayment({ key, email, amount, ref, channels, label }) {
-            const paystack = new PaystackPop()
-            paystack.newTransaction({
-                key,
-                email,
-                amount,
-                ref,
-                channels,
-                label,
-                onSuccess: (transaction) => {
-                    Bridge.callback("paystack", { code: 0, message: "Successful", transaction })
-                },
-                onCancel: () => {
-                    Bridge.callback("paystack", { code: 2, message: "Cancelled" })
-                }
-            })
-        }
-    </script>
 
 </html>

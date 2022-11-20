@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.6](https://github.com/nativescript-community/plugin-seed/compare/v3.0.5...v3.0.6) (2022-11-20)
+
+**Note:** Version bump only for package @nativescript-community/plugin-seed
+
+
+
+
+
 ## [3.0.5](https://github.com/nativescript-community/plugin-seed/compare/v3.0.4...v3.0.5) (2022-11-19)
 
 **Note:** Version bump only for package @nativescript-community/plugin-seed
