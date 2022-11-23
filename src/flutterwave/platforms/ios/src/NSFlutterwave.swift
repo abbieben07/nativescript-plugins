@@ -14,34 +14,34 @@ func jsonToString(_ jsonData: FlutterwaveDataResponse?) -> String {
 @objcMembers
 public class NSFlutterwave: UIViewController, FlutterwavePayProtocol {
 
-  public var amount: Number?
-  public var country: String?
-  public var currencyCode: String?
-  public var email: String? = ""
-  public var firstName: String? = ""
-  public var lastName: String? = ""
-  public var phoneNumber: String? = ""
+  public var amount: Int!
+  public var country: String? = "NG"
+  public var currencyCode: String? = "NGN"
+  public var email: String?
+  public var firstName: String?
+  public var lastName: String?
+  public var phoneNumber: String?
   public var narration: String?
-  public var publicKey: String = ""
-  public var encryptionKey: String = ""
+  public var publicKey: String!
+  public var encryptionKey: String!
   public var txRef: String?
   public var isPreAuth: Bool = false
   public var isStaging: Bool = true
   public var paymentOptionsToExclude: [String]?
-  public var delegate: NSFlutterwaveDelegate?
+  public var delegate: NSFlutterwaveDelegate
 
   public func tranasctionSuccessful(flwRef: String?, responseData: FlutterwaveDataResponse?) {
     let data = jsonToString(responseData)
-    self.delegate?.onSuccess(flwRef ?? "", data)
+    self.delegate.onSuccess(flwRef ?? "", data)
   }
 
   public func tranasctionFailed(flwRef: String?, responseData: FlutterwaveDataResponse?) {
     let data = jsonToString(responseData)
-    self.delegate?.onError(flwRef ?? "", data)
+    self.delegate.onError(flwRef ?? "", data)
   }
 
   public func onDismiss() {
-    self.delegate?.onDismiss()
+    self.delegate.onDismiss()
   }
 
   public func pay(view: UIViewController) -> NSFlutterwave {
@@ -59,7 +59,7 @@ public class NSFlutterwave: UIViewController, FlutterwavePayProtocol {
     config.transcationRef = self.txRef ?? "xxxxxxx"
     config.isPreAuth = self.isPreAuth
     config.isStaging = self.isStaging
-    //config.paymentOptionsToExclude = self.paymentOptionsToExclude ?? []
+    config.paymentOptionsToExclude = self.paymentOptionsToExclude ?? [""]
 
     config.meta = [["metaname": "sdk", "metavalue": "ios"]]
     //config.delegate = Delegator.new()
@@ -67,8 +67,8 @@ public class NSFlutterwave: UIViewController, FlutterwavePayProtocol {
     let controller = FlutterwavePayViewController()
     let nav = UINavigationController(rootViewController: controller)
 
-    controller.amount = self.amount
-    controller.delegate = self
+    controller.amount = String(self.amount)
+    controller.delegate = self.delegate
 
     view.present(nav, animated: true)
 

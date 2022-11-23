@@ -13,7 +13,11 @@
 </template>
 
 <script>
+<<<<<<< Updated upstream
 // @ts-nocheck
+=======
+//@ts-nocheck
+>>>>>>> Stashed changes
 import { Paystack } from '@abbieben/paystack'
 export default {
 	methods: {

@@ -16,7 +16,10 @@ module.exports = {
 	},
 
 	globals: {
-		__static: true
+		__static: true,
+		__DEV__: 'readonly',
+		__IOS__: 'readonly',
+		__ANDROID__: 'readonly'
 	},
 	plugins: ['vue', 'prettier'],
 	rules: {
