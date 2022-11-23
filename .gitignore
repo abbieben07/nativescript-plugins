@@ -24,10 +24,9 @@ yarn-error.log*
 .gradle
 .project
 .yarn
-tmp/
+
 package-lock.json
 yarn.lock
-/tmp
 
 !.eslintrc.js
 !.prettierrc.js

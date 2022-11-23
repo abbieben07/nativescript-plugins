@@ -17,12 +17,12 @@
 import Paypal from '@abbieben/paypal'
 export default {
 	methods: {
-		flutterwave() {
+		paypal() {
 			const paypal = new Paypal()
 
 			paypal.currency = 'USD'
 			paypal.amount = 10000 / 100
-			paypal.client_id = ''
+			paypal.client_id = 'sdssds'
 			paypal.sandbox = true
 
 			paypal
@@ -42,13 +42,10 @@ export default {
 							break
 					}
 				})
-				.catch((e) => {
-					console.log('Flutterwave Error', e)
-				})
+				.catch((e) => console.error('Paypal Error', e))
 		}
 	}
 }
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
