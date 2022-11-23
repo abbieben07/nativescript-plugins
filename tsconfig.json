@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 {
 	"extends": "./tools/tsconfig",
 	"compilerOptions": {
@@ -21,26 +20,3 @@
 	"include": ["src/**/*", "references.d.ts", "typings"],
 	"exclude": ["node_modules", "demo-snippets"]
 }
-=======
-{
-	"extends": "./tools/tsconfig",
-	"compilerOptions": {
-		"allowSyntheticDefaultImports": true,
-		"noEmitOnError": false,
-		"paths": {
-			"@abbieben/webview-interface": ["src/webview-interface"],
-			"@abbieben/webview-interface/*": ["src/webview-interface/*"],
-			"@abbieben/rich-text": ["src/rich-text"],
-			"@abbieben/rich-text/*": ["src/rich-text/*"],
-			"@abbieben/flutterwave": ["src/flutterwave"],
-			"@abbieben/flutterwave/*": ["src/flutterwave/*"],
-			"@abbieben/paystack": ["src/paystack"],
-			"@abbieben/paystack/*": ["src/paystack/*"],
-			"@abbieben/checkbox": ["src/checkbox"],
-			"@abbieben/checkbox/*": ["src/checkbox/*"]
-		}
-	},
-	"include": ["src/**/*", "references.d.ts"],
-	"exclude": ["node_modules", "demo-snippets"]
-}
->>>>>>> Stashed changes
