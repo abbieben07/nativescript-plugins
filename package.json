@@ -1,5 +1,5 @@
 {
-    "name": "@nativescript-community/plugin-seed",
+    "name": "@abbieben/nsplugins",
     "version": "1.0.0",
     "homepage": "https://github.com/nativescript-community/plugin-seed#readme",
     "bugs": {
@@ -32,7 +32,7 @@
         "copy": "npm run copy.wins && npm run copy.unix",
         "copy.unix": "cpy '**/{*.{d.ts,aar,jar,java,xml,html,gradle,swift},Podfile}' '../packages' --parents --cwd=src",
         "copy.wins": "cpy **/{*.{d.ts,aar,jar,java,xml,html,gradle,swift},Podfile} ../packages --parents --cwd=src",
-        "tsc": "tsc -skipLibCheck -d &&  npm run copy",
+        "tsc": "npm run copy && tsc -skipLibCheck -d",
         "update": "node ./tools/update.js",
         "watch": "npm run tsc -- -w",
         "doc": "node tools/builddoc.mjs && git add docs/* && git commit -m \"chore:doc\"",

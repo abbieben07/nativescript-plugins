@@ -1,0 +1,35 @@
+{
+	"compilerOptions": {
+		"target": "ES2017",
+		"module": "ESNext",
+		"moduleResolution": "node",
+		"noImplicitAny": false,
+		"noEmitOnError": false,
+		"noImplicitThis": false,
+		"strict": true,
+		"sourceMap": true,
+		"noEmitHelpers": true,
+		"importHelpers": true,
+		"baseUrl": ".",
+		"esModuleInterop": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"forceConsistentCasingInFileNames": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"allowSyntheticDefaultImports": true,
+		"skipLibCheck": true,
+		"skipDefaultLibCheck": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"noUncheckedIndexedAccess": true,
+		"allowJs": false,
+		"checkJs": false,
+		"importsNotUsedAsValues": "remove",
+		"paths": {
+			"@abbieben/*": ["../packages/*"]
+		}
+	},
+	"include": ["vue/**/*.ts", "vue/**/*.tsx", "vue/**/*.vue", "typings/**/*.ts"],
+	"exclude": ["node_modules"]
+}

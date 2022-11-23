@@ -27,6 +27,7 @@ yarn-error.log*
 tmp/
 package-lock.json
 yarn.lock
+/tmp
 
 !.eslintrc.js
 !.prettierrc.js

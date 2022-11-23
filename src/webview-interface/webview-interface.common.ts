@@ -1,5 +1,5 @@
 import { WebView } from '@nativescript/core'
-import { WebViewInterface } from './webview-interface'
+import { WebViewInterface } from '.'
 
 export class WebViewInterfaceCommon implements WebViewInterface {
 	constructor(public webView: WebView) {}

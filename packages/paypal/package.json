@@ -1,10 +1,10 @@
 {
-    "name": "@abbieben/webview-interface",
-    "version": "3.0.6",
-    "description": "This is the description for the plugin seed. This is what will be published to NPM.",
-    "main": "./index",
+    "name": "@abbieben/paypal",
+    "version": "1.0.0",
+    "description": "This is an easy plugin of the PayPal SDK for Android and iOS",
+    "main": "./paypal",
     "sideEffects": false,
-    "typings": "./index.d.ts",
+    "typings": "./paypal.d.ts",
     "nativescript": {
         "platforms": {
             "android": "6.0.0",
@@ -19,19 +19,20 @@
         "Angular",
         "React",
         "Svelte",
-        "Vue"
+        "Vue",
+        "paypal"
     ],
     "bugs": {
-        "url": "https://github.com/abbieben/webview-interface/issues"
+        "url": "https://github.com/abbieben07/paypal/issues"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/abbieben/webview-interface"
-    },
-    "publishConfig": {
-        "access": "public"
+        "url": "https://github.com/abbieben07/paypal"
     },
     "license": "Apache-2.0",
     "readmeFilename": "README.md",
+    "publishConfig": {
+        "access": "public"
+    },
     "gitHead": "27ead0fb83e310e81b065bbe5b16e81c8e734915"
 }

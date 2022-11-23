@@ -1,45 +1,22 @@
 {
-    "extends": "./tools/tsconfig",
-    "compilerOptions": {
-        "allowSyntheticDefaultImports": true,
-        "paths": {
-            "@abbieben/webview-interface": [
-                "src/webview-interface"
-            ],
-            "@abbieben/webview-interface/*": [
-                "src/webview-interface/*",
-            ],
-            "@abbieben/rich-text": [
-                "src/rich-text"
-            ],
-            "@abbieben/rich-text/*": [
-                "src/rich-text/*"
-            ],
-            "@abbieben/flutterwave": [
-                "src/flutterwave"
-            ],
-            "@abbieben/flutterwave/*": [
-                "src/flutterwave/*"
-            ],
-            "@abbieben/paystack": [
-                "src/paystack"
-            ],
-            "@abbieben/paystack/*": [
-                "src/paystack/*"
-            ],
-            "@abbieben/checkbox": [
-                "src/checkbox"
-            ],
-            "@abbieben/checkbox/*": [
-                "src/checkbox/*"
-            ]
-        },
-    },
-    "include": [
-        "src/**/*",
-        "references.d.ts"
-    ],
-    "exclude": [
-        "node_modules"
-    ],
+	"extends": "./tools/tsconfig",
+	"compilerOptions": {
+		"allowSyntheticDefaultImports": true,
+		"paths": {
+			"@abbieben/webview-interface": ["src/webview-interface"],
+			"@abbieben/webview-interface/*": ["src/webview-interface/*"],
+			"@abbieben/rich-text": ["src/rich-text"],
+			"@abbieben/rich-text/*": ["src/rich-text/*"],
+			"@abbieben/flutterwave": ["src/flutterwave"],
+			"@abbieben/flutterwave/*": ["src/flutterwave/*"],
+			"@abbieben/paystack": ["src/paystack"],
+			"@abbieben/paystack/*": ["src/paystack/*"],
+			"@abbieben/checkbox": ["src/checkbox"],
+			"@abbieben/checkbox/*": ["src/checkbox/*"],
+			"@abbieben/paypal": ["src/paypal"],
+			"@abbieben/paypal/*": ["src/paypal/*"]
+		}
+	},
+	"include": ["src/**/*", "references.d.ts", "typings"],
+	"exclude": ["node_modules", "demo-snippets"]
 }

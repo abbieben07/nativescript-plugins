@@ -1,4 +1,3 @@
-// @ts-ignore
 import { WebViewInterface } from '@abbieben/webview-interface'
 import { Frame, isAndroid, Page, WebView } from '@nativescript/core'
 

@@ -14,20 +14,20 @@
 </template>
 
 <script>
-import moment from 'moment';
+import moment from 'moment'
 
 export default {
 	data() {
 		return {
 			date: '02/02/2022'
-		};
+		}
 	},
 	computed: {
 		maxDate() {
-			return moment().format('DD/MM/YYYY');
+			return moment().format('DD/MM/YYYY')
 		}
 	}
-};
+}
 </script>
 
 <style lang="scss" scoped>

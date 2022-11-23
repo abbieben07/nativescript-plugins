@@ -10,7 +10,7 @@ const Activity = com.flutterwave.raveandroid.RavePayActivity
 export class Flutterwave extends FlutterwaveCommon {
 	private manager: any
 
-	constructor(UI = true as Boolean) {
+	constructor(UI: boolean = true) {
 		super()
 
 		if (UI) {

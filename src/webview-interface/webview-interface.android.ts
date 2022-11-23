@@ -1,6 +1,16 @@
 import { Device, WebView } from '@nativescript/core'
 import { WebViewInterfaceCommon } from './webview-interface.common'
 
+declare namespace com {
+	namespace novacio {
+		namespace webview {
+			class WebviewInterface {
+				emit: (name: string, data: string) => void
+				//_emit: (name: string, data: string) => void
+			}
+		}
+	}
+}
 export class WebViewInterface extends WebViewInterfaceCommon {
 	constructor(webView: WebView) {
 		super(webView)

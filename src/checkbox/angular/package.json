@@ -2,7 +2,7 @@
     "name": "@abbieben/checkbox-angular",
     "main": "index.js",
     "ngPackage": {
-        "dest": "../../plugin/angular",
+        "dest": "../../packages/checkbox/angular",
         "lib": {
             "entryFile": "index.ts",
             "umdModuleIds": {

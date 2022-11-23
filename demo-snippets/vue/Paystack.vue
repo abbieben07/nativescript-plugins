@@ -13,6 +13,7 @@
 </template>
 
 <script>
+// @ts-nocheck
 import { Paystack } from '@abbieben/paystack'
 export default {
 	methods: {
