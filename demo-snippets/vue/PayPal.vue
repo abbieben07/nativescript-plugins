@@ -22,7 +22,7 @@ export default {
 
 			paypal.currency = 'USD'
 			paypal.amount = 10000 / 100
-			paypal.client_id = 'sdssds'
+			paypal.client_id = 'AcRDI9NjX54DSNc1D2JlkDOY68rslQhfXFqaYKC7NrjFB_7JujDgxSja_60dHCdhF3hjZahiZn1Bj6yU'
 			paypal.sandbox = true
 
 			paypal

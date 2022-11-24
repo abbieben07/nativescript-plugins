@@ -16,6 +16,7 @@ export default class PayPal extends PayPalCommon {
 			this.validate()
 				.then(() => {
 					this.controller.amount = this.amount
+
 					this.controller.client_id = this.client_id
 					this.controller.sandbox = this.sandbox
 					this.controller.delegate = PayPalDelegator.init(resolve)
