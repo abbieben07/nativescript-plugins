@@ -1,6 +1,6 @@
 {
     "name": "@abbieben/paypal",
-    "version": "1.0.0",
+    "version": "3.0.7",
     "description": "This is an easy plugin of the PayPal SDK for Android and iOS",
     "main": "./paypal",
     "sideEffects": false,
