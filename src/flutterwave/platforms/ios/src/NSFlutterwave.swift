@@ -15,8 +15,8 @@ func jsonToString(_ jsonData: FlutterwaveDataResponse?) -> String {
 public class NSFlutterwave: UIViewController, FlutterwavePayProtocol {
 
   public var amount: Int!
-  public var country: String? = "NG"
-  public var currencyCode: String? = "NGN"
+  public var country: String?
+  public var currencyCode: String?
   public var email: String?
   public var firstName: String?
   public var lastName: String?
@@ -28,7 +28,7 @@ public class NSFlutterwave: UIViewController, FlutterwavePayProtocol {
   public var isPreAuth: Bool = false
   public var isStaging: Bool = true
   public var paymentOptionsToExclude: [String]?
-  public var delegate: NSFlutterwaveDelegate
+  public var delegate: NSFlutterwaveDelegate!
 
   public func tranasctionSuccessful(flwRef: String?, responseData: FlutterwaveDataResponse?) {
     let data = jsonToString(responseData)
@@ -56,10 +56,10 @@ public class NSFlutterwave: UIViewController, FlutterwavePayProtocol {
     config.narration = self.narration ?? "Testing"
     config.publicKey = self.publicKey
     config.encryptionKey = self.encryptionKey
-    config.transcationRef = self.txRef ?? "xxxxxxx"
+    config.transcationRef = self.txRef
     config.isPreAuth = self.isPreAuth
     config.isStaging = self.isStaging
-    config.paymentOptionsToExclude = self.paymentOptionsToExclude ?? [""]
+    //config.paymentOptionsToExclude = self?.paymentOptionsToExclude
 
     config.meta = [["metaname": "sdk", "metavalue": "ios"]]
     //config.delegate = Delegator.new()
@@ -68,7 +68,7 @@ public class NSFlutterwave: UIViewController, FlutterwavePayProtocol {
     let nav = UINavigationController(rootViewController: controller)
 
     controller.amount = String(self.amount)
-    controller.delegate = self.delegate
+    controller.delegate = self
 
     view.present(nav, animated: true)
 

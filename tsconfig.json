@@ -3,7 +3,7 @@
 	"compilerOptions": {
 		"allowSyntheticDefaultImports": true,
 		"paths": {
-			"@abbieben/webview-interface": ["src/webview-interface"],
+			"@abbieben/webview-interface": ["src/webview-interface/webview-interface.d.ts"],
 			"@abbieben/webview-interface/*": ["src/webview-interface/*"],
 			"@abbieben/rich-text": ["src/rich-text"],
 			"@abbieben/rich-text/*": ["src/rich-text/*"],

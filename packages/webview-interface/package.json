@@ -2,9 +2,9 @@
     "name": "@abbieben/webview-interface",
     "version": "3.0.6",
     "description": "This is the description for the plugin seed. This is what will be published to NPM.",
-    "main": "./index",
+    "main": "./webview-interface",
     "sideEffects": false,
-    "typings": "./index.d.ts",
+    "typings": "./webview-interface.d.ts",
     "nativescript": {
         "platforms": {
             "android": "6.0.0",
