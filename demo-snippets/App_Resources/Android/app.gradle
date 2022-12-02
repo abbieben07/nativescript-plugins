@@ -1,0 +1,32 @@
+// Add your native dependencies here:
+repositories {
+    maven {
+        url 'https://jitpack.io'
+    }
+    google()
+}
+
+// Uncomment to add recyclerview-v7 dependency
+dependencies {
+    ///implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'androidx.multidex:multidex:2.0.1'
+}
+
+// If you want to add something to be applied before applying plugins' include.gradle files
+// e.g. project.ext.googlePlayServicesVersion = "15.0.1"
+// create a file named before-plugins.gradle in the current directory and place it there
+
+android {
+    defaultConfig {
+        minSdkVersion 21
+        generatedDensities = []
+        multiDexEnabled true
+        targetSdkVersion 30
+    }
+    aaptOptions {
+        additionalParameters '--no-version-vectors'
+    }
+    dexOptions {
+        javaMaxHeapSize '4g'
+    }
+}

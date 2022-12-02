@@ -3,5 +3,6 @@
     package="__PACKAGE__">
 
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-sdk android:minSdkVersion="21" />
 
 </manifest>
