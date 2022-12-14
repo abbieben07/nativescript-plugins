@@ -66,7 +66,7 @@ export class Paystack extends WebView {
 								return reject('The User cancelled the ')
 						}
 					}
-					WVInterface.start().then(() => WVInterface.call('makePayment', data, callback))
+					WVInterface.start().then(() => WVInterface.call('paystack', data, callback))
 				})
 				.catch((e) => reject(e))
 		})

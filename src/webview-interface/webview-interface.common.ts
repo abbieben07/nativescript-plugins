@@ -2,7 +2,7 @@ import { WebView } from '@nativescript/core'
 import { WebViewInterface } from './webview-interface'
 
 export class WebViewInterfaceCommon implements WebViewInterface {
-	constructor(public webView: WebView) {}
+	constructor(public webView: WebView) { }
 
 	start() {
 		return new Promise((resolve) => {
@@ -40,5 +40,6 @@ export class WebViewInterfaceCommon implements WebViewInterface {
 		this.webView.once(eventName, callback)
 	}
 
-	call(fname: string, arg: Object, callback: (data: Object[] | Object) => void) {}
+	call(fname: string, arg: Object, callback: (data: Object[] | Object) => void) {
+	}
 }

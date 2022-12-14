@@ -26,24 +26,25 @@ export class WebViewInterface extends WebViewInterfaceCommon {
 	}
 
 	public setupWebView() {
-		;(this.webView.nativeViewProtected as android.webkit.WebView).getSettings().setJavaScriptEnabled(true)
-		;(this.webView.nativeViewProtected as android.webkit.WebView).getSettings().setAllowFileAccess(true)
-		;(this.webView.nativeViewProtected as android.webkit.WebView).getSettings().setAllowContentAccess(true)
+		; (this.webView.nativeViewProtected as android.webkit.WebView).getSettings().setJavaScriptEnabled(true)
+			; (this.webView.nativeViewProtected as android.webkit.WebView).getSettings().setAllowFileAccess(true)
+			; (this.webView.nativeViewProtected as android.webkit.WebView).getSettings().setAllowContentAccess(true)
 		const JSInterface = new JavascriptInterface(new WeakRef(this))
-		;(this.webView.nativeViewProtected as android.webkit.WebView).addJavascriptInterface(JSInterface, 'Android')
+			; (this.webView.nativeViewProtected as android.webkit.WebView).addJavascriptInterface(JSInterface, 'Android')
 	}
 
-	call(fname: string, arg: Object, callback: (data: Object[] | Object) => void) {
+	call(fname: string, arg: Object, callback: (data: any) => void) {
 		const params = JSON.stringify(arg)
 		if (callback) {
+			console.log("Calling the callback")
 			this.once(fname, ({ data }: any) => callback(data))
 		}
 		const caller = `Bridge.call('${fname}', '${params}');`
 		if (Device.sdkVersion >= '19') {
 			// @ts-ignore
-			;(this.webView.nativeView as android.webkit.WebView).evaluateJavascript(caller, null)
+			; (this.webView.nativeView as android.webkit.WebView).evaluateJavascript(caller, null)
 		} else {
-			;(this.webView.nativeView as android.webkit.WebView).loadUrl(`javascript: ${caller}`)
+			; (this.webView.nativeView as android.webkit.WebView).loadUrl(`javascript: ${caller}`)
 		}
 	}
 }

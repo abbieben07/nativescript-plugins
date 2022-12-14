@@ -1,35 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Paystack Payment</title>
+	</head>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Paystack Payment</title>
-    </head>
-
-    <body>
-        <script src="https://js.paystack.co/v2/inline.js"></script>
-        <script src="./bridge.js"></script>
-        <script>
-            function makePayment({ key, email, amount, ref, channels, label }) {
-                const paystack = new PaystackPop()
-                paystack.newTransaction({
-                    key,
-                    email,
-                    amount,
-                    ref,
-                    channels,
-                    label,
-                    onSuccess: (transaction) => {
-                        Bridge.callback("paystack", { code: 0, message: "Successful", transaction })
-                    },
-                    onCancel: () => {
-                        Bridge.callback("paystack", { code: 2, message: "Cancelled" })
-                    }
-                })
-            }
-        </script>
-    </body>
-
+	<body bgcolor="#CCCCCC">
+		<script src="https://js.paystack.co/v2/inline.js"></script>
+		<script src="./bridge.js"></script>
+		<script>
+			function paystack(name, { key, email, amount, ref, channels, label }) {
+				new PaystackPop().newTransaction({
+					key,
+					email,
+					amount,
+					ref,
+					channels,
+					label,
+					onSuccess: (transaction) => {
+						Bridge.callback(name, { code: 0, message: 'Successful', transaction })
+					},
+					onCancel: () => {
+						Bridge.callback(name, { code: 2, message: 'Cancelled' })
+					}
+				})
+			}
+		</script>
+	</body>
 </html>

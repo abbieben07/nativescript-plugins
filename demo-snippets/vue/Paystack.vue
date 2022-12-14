@@ -15,9 +15,17 @@
 <script>
 // @ts-nocheck
 import { Paystack } from '@abbieben/paystack'
+import { knownFolders } from '@nativescript/core'
 export default {
 	methods: {
 		payment() {
+			knownFolders
+				.currentApp()
+				.getFolder('www')
+				.eachEntity((e) => {
+					console.log(e.path)
+				})
+
 			const paystack = new Paystack()
 			paystack.key = 'pk_test_72fab2286e4be992f1e8f1a0c71797b6cc1b7098'
 			paystack.email = 'abbie_ben@live.com'

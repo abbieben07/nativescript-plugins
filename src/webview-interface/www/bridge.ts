@@ -1,6 +1,8 @@
 declare const Android, iOS
 
 class Bridge {
+	//private callback: Function
+
 	static parseJSON(data: string) {
 		let result!: JSON
 		try {
@@ -21,9 +23,10 @@ class Bridge {
 		return result
 	}
 
-	public static call(name: string, data: string, callback?: Function) {
+	public static call(name: string, data: string) {
+
 		const fn: Function = window[name]
-		if (typeof fn === 'function') fn(this.parseJSON(data))
+		if (typeof fn === 'function') fn(name, this.parseJSON(data))
 	}
 
 	public static callback(name: string, data: JSON) {
