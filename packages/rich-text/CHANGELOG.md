@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.10](https://github.com/abbieben07/rich-text/compare/v3.0.9...v3.0.10) (2022-12-14)
+
+**Note:** Version bump only for package @abbieben/rich-text
+
+
+
+
+
 ## [3.0.9](https://github.com/abbieben07/rich-text/compare/v3.0.8...v3.0.9) (2022-12-04)
 
 **Note:** Version bump only for package @abbieben/rich-text
