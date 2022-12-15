@@ -30,7 +30,7 @@ export class Paystack extends WebView {
 		})
 	}
 
-	public pay(): Promise<any> {
+	public pay(): Promise<Response> {
 		return new Promise((resolve, reject) => {
 			this.validate()
 				.then(() => {
@@ -55,15 +55,15 @@ export class Paystack extends WebView {
 						label: this.label,
 						channels: this.channels
 					}
-					const callback = ({ code, transaction }) => {
+					const callback = ({ code, transaction }: Callback) => {
 						Frame.topmost().goBack()
 						switch (code) {
-							case PaystackResponse.SUCCESS:
+							case Status.SUCCESS:
 								return resolve(transaction)
-							case PaystackResponse.ERROR:
-								return resolve(new Error('i dunno'))
-							case PaystackResponse.CANCELLED:
-								return reject('The User cancelled the ')
+							case Status.ERROR:
+								return resolve(transaction)
+							case Status.CANCELLED:
+								return reject('The User cancelled the transaction')
 						}
 					}
 					WVInterface.start().then(() => WVInterface.call('paystack', data, callback))
@@ -73,8 +73,22 @@ export class Paystack extends WebView {
 	}
 }
 
-export enum PaystackResponse {
+export enum Status {
 	SUCCESS = 'success',
 	ERROR = 'error',
 	CANCELLED = 'cancelled'
+}
+
+export interface Response {
+	code: Status
+	status: Status
+	message: string
+	transaction: number
+	reference: string
+	trxref: string
+}
+
+interface Callback {
+	code: Status
+	transaction: Response
 }

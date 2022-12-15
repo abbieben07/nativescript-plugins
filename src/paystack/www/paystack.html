@@ -20,10 +20,10 @@
 					channels,
 					label,
 					onSuccess: (transaction) => {
-						Bridge.callback(name, { code: 0, message: 'Successful', transaction })
+						Bridge.callback(name, { code: transaction.status, transaction })
 					},
 					onCancel: () => {
-						Bridge.callback(name, { code: 2, message: 'Cancelled' })
+						Bridge.callback(name, { code: transaction.status })
 					}
 				})
 			}
