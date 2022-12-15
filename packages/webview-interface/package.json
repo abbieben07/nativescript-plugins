@@ -1,6 +1,6 @@
 {
     "name": "@abbieben/webview-interface",
-    "version": "3.0.11",
+    "version": "3.0.12",
     "description": "This is the description for the plugin seed. This is what will be published to NPM.",
     "main": "./webview-interface",
     "sideEffects": false,

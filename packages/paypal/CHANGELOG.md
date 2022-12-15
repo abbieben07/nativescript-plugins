@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.12](https://github.com/abbieben07/paypal/compare/v3.0.11...v3.0.12) (2022-12-15)
+
+**Note:** Version bump only for package @abbieben/paypal
+
+
+
+
+
 ## [3.0.11](https://github.com/abbieben07/paypal/compare/v3.0.10...v3.0.11) (2022-12-15)
 
 **Note:** Version bump only for package @abbieben/paypal
