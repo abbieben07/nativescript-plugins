@@ -1,6 +1,6 @@
 {
     "name": "@abbieben/paypal",
-    "version": "3.0.10",
+    "version": "3.0.11",
     "description": "This is an easy plugin of the PayPal SDK for Android and iOS",
     "main": "./paypal",
     "sideEffects": false,
@@ -34,5 +34,5 @@
     "publishConfig": {
         "access": "public"
     },
-    "gitHead": "bb730c590447ab57d2cbcc50cb81167f9c5f9d04"
+    "gitHead": "b199e76b8ab6dcc2d73e4d1ed4125a6b5b7e8c4c"
 }

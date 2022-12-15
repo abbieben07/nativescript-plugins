@@ -1,6 +1,6 @@
 {
     "name": "@abbieben/rich-text",
-    "version": "3.0.10",
+    "version": "3.0.11",
     "description": "This is the description for the plugin seed. This is what will be published to NPM.",
     "main": "./rich-text",
     "sideEffects": false,
@@ -41,5 +41,5 @@
     "publishConfig": {
         "access": "public"
     },
-    "gitHead": "bb730c590447ab57d2cbcc50cb81167f9c5f9d04"
+    "gitHead": "b199e76b8ab6dcc2d73e4d1ed4125a6b5b7e8c4c"
 }
