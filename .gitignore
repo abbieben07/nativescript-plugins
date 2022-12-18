@@ -69,3 +69,5 @@ pnpm-lock.yaml
 demo-vue
 Typescript Generator
 tmp
+demo-*
+!demo-snippets
