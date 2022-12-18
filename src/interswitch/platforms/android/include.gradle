@@ -1,0 +1,12 @@
+allprojects {
+        repositories {
+            google()
+            jcenter()
+            mavenCentral()
+        }
+}
+dependencies {
+    /* groovylint-disable-next-line NoDef, VariableTypeRequired */
+    def versionName = 'latest-version'
+    implementation "com.interswitchng:isw-mobile-payment-sdk:$versionName"
+}

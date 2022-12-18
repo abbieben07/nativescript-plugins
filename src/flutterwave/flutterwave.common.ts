@@ -55,6 +55,20 @@ export abstract class FlutterwaveCommon implements Flutterwave {
 	}
 }
 
-export class Response {
-	constructor(private status: string, private data: any, private reference: string = '') {}
+export interface Response {
+	status: Status
+	message: string
+	data?: {
+		txref: string
+		id: number
+		amount: number
+		currency: string
+		status: string
+	}
+}
+
+export enum Status {
+	SUCCESS = 'success',
+	ERROR = 'error',
+	CANCELLED = 'cancelled'
 }

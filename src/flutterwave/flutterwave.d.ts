@@ -1,10 +1,6 @@
 import { Response } from './flutterwave.common'
 
 export declare class Flutterwave {
-	public static PAYMENT_SUCCESS: string
-	public static PAYMENT_ERROR: string
-	public static PAYMENT_CANCELLED: string
-
 	country: string
 	amount: number
 	currency: string

@@ -1,8 +1,6 @@
 import { PayPalResponse } from './paypal'
 import PayPalCommon, { Response } from './paypal.common'
 
-declare var com: { paypal: { checkout: any } }
-
 export default class PayPal extends PayPalCommon {
 	static setup(context, client_id: string) {
 		const config = new com.paypal.checkout.config.CheckoutConfig(context, client_id, '', com.paypal.checkout.createorder.CurrencyCode.USD, com.paypal.checkout.createorder.UserAction.PAY_NOW)

@@ -37,11 +37,11 @@ export class Flutterwave extends FlutterwaveCommon {
 
 							switch (resultCode) {
 								case Activity.RESULT_SUCCESS:
-									return resolve(new Response(Flutterwave.PAYMENT_SUCCESS, data))
+									return resolve(data)
 								case Activity.RESULT_ERROR:
-									return resolve(new Response(Flutterwave.PAYMENT_ERROR, data))
+									return resolve(data)
 								case Activity.RESULT_CANCELLED:
-									return resolve(new Response(Flutterwave.PAYMENT_CANCELLED, data))
+									return resolve(data)
 								default:
 									return reject(new Error('Flutterwave Android Result Code is invalid'))
 							}

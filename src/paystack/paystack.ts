@@ -38,7 +38,11 @@ export class Paystack extends WebView {
 					const page = new Page()
 					page.actionBarHidden = true
 					page.backgroundSpanUnderStatusBar = false
-					if (isAndroid) this.marginTop = 24
+					if (isAndroid) {
+						this.marginTop = 24
+						;(this.nativeViewProtected as android.webkit.WebView).getSettings().setBuiltInZoomControls(false)
+						;(this.nativeViewProtected as android.webkit.WebView).getSettings().setDisplayZoomControls(false)
+					}
 					page.content = this
 					Frame.topmost().navigate({
 						create: () => page,
@@ -63,7 +67,9 @@ export class Paystack extends WebView {
 							case Status.ERROR:
 								return resolve(transaction)
 							case Status.CANCELLED:
-								return reject('The User cancelled the transaction')
+								return resolve({ code, message: 'The User cancelled the transaction' })
+							default:
+								return reject(new Error('Unknown Paystack Error'))
 						}
 					}
 					WVInterface.start().then(() => WVInterface.call('paystack', data, callback))
@@ -81,11 +87,11 @@ export enum Status {
 
 export interface Response {
 	code: Status
-	status: Status
+	status?: Status
 	message: string
-	transaction: number
-	reference: string
-	trxref: string
+	transaction?: number
+	reference?: string
+	trxref?: string
 }
 
 interface Callback {
