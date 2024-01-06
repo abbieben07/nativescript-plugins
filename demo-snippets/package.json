@@ -1,18 +1,19 @@
 {
-    "name": "@nativescript-community/template-snippet",
-    "version": "0.0.1",
-    "dependencies": {
-        "@abbieben/checkbox": "file:../packages/checkbox",
-        "@abbieben/flutterwave": "file:../packages/flutterwave",
-        "@abbieben/paystack": "file:../packages/paystack",
-        "@abbieben/rich-text": "file:../packages/rich-text",
-        "@abbieben/webview-interface": "file:../packages/webview-interface",
-        "@abbieben/paypal": "file:../packages/paypal"
-    },
-    "nativescript": {
-        "platforms": {
-            "android": "*",
-            "ios": "*"
-        }
-    }
+	"name": "@nativescript-community/template-snippet",
+	"version": "0.0.1",
+	"dependencies": {
+		"@abbieben/checkbox": "file:../packages/checkbox",
+		"@abbieben/flutterwave": "file:../packages/flutterwave",
+		"@abbieben/paystack": "file:../packages/paystack",
+		"@abbieben/rich-text": "file:../packages/rich-text",
+		"@abbieben/webview-interface": "file:../packages/webview-interface",
+		"@abbieben/paypal": "file:../packages/paypal",
+		"@abbieben/dropdown": "file:../packages/dropdown"
+	},
+	"nativescript": {
+		"platforms": {
+			"android": "*",
+			"ios": "*"
+		}
+	}
 }

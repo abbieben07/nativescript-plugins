@@ -1,0 +1,9 @@
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+}
+dependencies {
+    implementation 'com.github.flutterwave.rave-android:rave_android:2.1.39'
+}
+

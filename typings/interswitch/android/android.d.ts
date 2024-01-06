@@ -1,5 +1,5 @@
 /// <reference path="android-declarations.d.ts"/>
-
+// @ts-nocheck
 declare module com {
 	export module interswitchng {
 		export module iswmobilesdk {
@@ -3877,4 +3877,3 @@ declare module com {
 //com.interswitchng.iswmobilesdk.shared.models.state.Data.Pending:1
 //com.interswitchng.iswmobilesdk.shared.models.state.Data.Value:1
 //com.interswitchng.iswmobilesdk.shared.utils.CallResponse:1
-

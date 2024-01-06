@@ -1,7 +1,7 @@
-import { WebViewInterface } from '@abbieben/webview-interface'
-import { Frame, isAndroid, Page, WebView } from '@nativescript/core'
+import { AWebView } from '@nativescript-community/ui-webview'
+import { Frame, isAndroid, Page } from '@nativescript/core'
 
-export class Paystack extends WebView {
+export class Paystack {
 	public key!: string
 	public email!: string
 	public amount!: number
@@ -34,22 +34,28 @@ export class Paystack extends WebView {
 		return new Promise((resolve, reject) => {
 			this.validate()
 				.then(() => {
-					this.src = '~/www/paystack.html'
+					const webview = new AWebView()
+					webview.src = '~/www/paystack.html'
+					webview.supportZoom = false
+					webview.builtInZoomControls = false
+					webview.displayZoomControls = false
+					webview.debugMode = __DEV__
+					//@ts-ignore
+					webview.scalesPageToFit = true
+					//@ts-ignore
+					webview.scrollBarIndicator = false
 					const page = new Page()
 					page.actionBarHidden = true
 					page.backgroundSpanUnderStatusBar = false
 					if (isAndroid) {
-						this.marginTop = 24
-						;(this.nativeViewProtected as android.webkit.WebView).getSettings().setBuiltInZoomControls(false)
-						;(this.nativeViewProtected as android.webkit.WebView).getSettings().setDisplayZoomControls(false)
+						webview.marginTop = 24
 					}
-					page.content = this
+					page.content = webview
 					Frame.topmost().navigate({
 						create: () => page,
 						backstackVisible: false
 					})
 
-					const WVInterface = new WebViewInterface(this)
 					const data = {
 						key: this.key,
 						email: this.email,
@@ -59,20 +65,22 @@ export class Paystack extends WebView {
 						label: this.label,
 						channels: this.channels
 					}
-					const callback = ({ code, transaction }: Callback) => {
-						Frame.topmost().goBack()
-						switch (code) {
-							case Status.SUCCESS:
-								return resolve(transaction)
-							case Status.ERROR:
-								return resolve(transaction)
-							case Status.CANCELLED:
-								return resolve({ code, message: 'The User cancelled the transaction' })
-							default:
-								return reject(new Error('Unknown Paystack Error'))
-						}
-					}
-					WVInterface.start().then(() => WVInterface.call('paystack', data, callback))
+					webview
+						.executePromise('paystack')
+						.then(({ code, transaction }: Callback) => {
+							Frame.topmost().goBack()
+							switch (code) {
+								case Status.SUCCESS:
+									return resolve(transaction)
+								case Status.ERROR:
+									return resolve(transaction)
+								case Status.CANCELLED:
+									return resolve({ code, message: 'The User cancelled the transaction' })
+								default:
+									return reject(new Error('Unknown Paystack Error'))
+							}
+						})
+						.catch((e) => reject(e))
 				})
 				.catch((e) => reject(e))
 		})

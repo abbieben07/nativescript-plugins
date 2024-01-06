@@ -1,0 +1,2 @@
+pod 'SimpleCheckbox', :git => 'https://github.com/BeauNouvelle/SimpleCheckbox.git'
+platform :ios, '11.0'

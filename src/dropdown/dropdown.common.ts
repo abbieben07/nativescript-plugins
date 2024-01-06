@@ -10,7 +10,7 @@ export default class DropdownCommon extends View implements DropdownDefinition {
 
 export interface Value {
 	text: string
-	id?: number
+	value?: number
 }
 
 export const itemsProperty = new Property<DropdownCommon, ObservableArray<Value>>({
@@ -22,6 +22,11 @@ export const valueProperty = new Property<DropdownCommon, string>({
 	name: 'value'
 })
 valueProperty.register(DropdownCommon)
+
+export const labelProperty = new Property<DropdownCommon, string>({
+	name: 'label'
+})
+labelProperty.register(DropdownCommon)
 
 export const popupBackgroundColor = new CssProperty<Style, Color>({
 	name: 'popupBackgroundColor',

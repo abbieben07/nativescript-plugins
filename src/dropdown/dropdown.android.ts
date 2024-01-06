@@ -1,15 +1,21 @@
 import { ObservableArray } from '@nativescript/core'
-import DropdownCommon, { itemsProperty, Value, valueProperty } from './dropdown.common'
+import DropdownCommon, { itemsProperty, labelProperty, Value, valueProperty } from './dropdown.common'
 
-export class Dropdown extends DropdownCommon {
-	nativeView: android.widget.Spinner
+export default class Dropdown extends DropdownCommon {
+	_context: android.content.Context
+	editText: com.google.android.material.textfield.MaterialAutoCompleteTextView
+	nativeView: com.google.android.material.textfield.TextInputLayout
 
-	public createNativeView(): Object {
-		const spinner = new android.widget.Spinner(this._context)
-		//spinner.setOnSpinnerItemSelectedListener(new DropdownListener(new WeakRef(this)))
-		//spinner.setOnDismissListener(new DropdownListener(new WeakRef(this)))
-		//checkbox.setOnCheckedChangeListener(new CheckboxListener())
-		return spinner
+	public createNativeView() {
+		const dropdown = new com.google.android.material.textfield.TextInputLayout(this._context)
+		this.editText = new com.google.android.material.textfield.MaterialAutoCompleteTextView(this._context)
+		this.editText.setOnItemClickListener(new DropdownListener(this))
+		this.editText.setFocusable(false)
+		const items = ['Working', 'now']
+		const adapter = new android.widget.ArrayAdapter<string>(this._context, android.R.layout.simple_list_item_1, items)
+		this.editText.setAdapter(adapter)
+		dropdown.addView(this.editText)
+		return dropdown
 	}
 
 	initNativeView(): void {
@@ -23,138 +29,33 @@ export class Dropdown extends DropdownCommon {
 	}
 
 	[valueProperty.setNative](value: string) {
-		this.nativeView.setSelectedItemByIndex(value)
+		//this.nativeView.setSelectedItemByIndex(value)
 	}
 
-	[itemsProperty.setNative](_value: ObservableArray<Value>) {
-		//this.nativeView.
+	[labelProperty.setNative](value: string) {
+		this.editText.setHint(value)
 	}
 
-	get activeColor(): string {
-		return (this.style as any).activeColor
-	}
-	set activeColor(color: string) {
-		;(this.style as any).activeColor = color
-	}
-
-	get inactiveColor(): string {
-		return (this.style as any).inactiveColor
-	}
-	set inactiveColor(color: string) {
-		;(this.style as any).inactiveColor = color
+	[itemsProperty.setNative](value: ObservableArray<Value>) {
+		console.log('Here')
+		const items = Array.create(java.lang.String, value.length)
+		value.forEach((e, i) => (items[i] = e.text))
+		const adapter = new android.widget.ArrayAdapter<java.lang.String>(this._context, android.R.layout.simple_list_item_1, items)
+		this.editText.setAdapter(adapter)
 	}
 }
 
+// how to convert javascript string array to java string array in Nativescript ?
+
 @NativeClass()
-class DropDownAdapter extends android.widget.SpinnerAdapter implements android.widget.AdapterView.OnItemSelectedListener {
-	constructor(private owner: WeakRef<Dropdown>) {
+@Interfaces([android.widget.AdapterView.OnItemClickListener])
+class DropdownListener extends java.lang.Object implements android.widget.AdapterView.OnItemClickListener {
+	constructor(private parent: Dropdown) {
 		super()
 		return global.__native(this)
 	}
 
-	public getCount() {
-		if (!this.owner.get()) return 0
-
-		return this.owner.get().items.length
-	}
-
-	public isEnabled(i: number) {
-		return i !== 0
-	}
-
-	public getItemId(i: number) {
-		return long(i)
-	}
-
-	public hasStableIds(): boolean {
-		return true
-	}
-
-	public getView(index: number, convertView: android.view.View, parent: android.view.ViewGroup): android.view.View {
-		return this._generateView(index, convertView, parent, RealizedViewType.ItemView)
-	}
-
-	public getDropDownView(index: number, convertView: android.view.View, parent: android.view.ViewGroup): android.view.View {
-		return this._generateView(index, convertView, parent, RealizedViewType.DropDownView)
-	}
-
-	private _generateView(index: number, convertView: android.view.View, parent: android.view.ViewGroup, realizedViewType: RealizedViewType): android.view.View {
-		// In some strange situations owner can become null (see #181)
-		if (!this.owner) {
-			return null
-		}
-
-		const owner = this.owner.get()
-
-		if (!owner) {
-			return null
-		}
-
-		const view = owner._getRealizedView(convertView, realizedViewType)
-
-		if (view) {
-			if (!view.parent) {
-				owner._addView(view)
-				convertView = view.android
-			}
-
-			const label = view.getViewById<Label>(LABELVIEWID)
-			label.text = this.getItem(index)
-
-			// Copy root styles to view
-			if (owner.style.color) {
-				label.style.color = owner.style.color
-			}
-			if (owner.style.placeholderColor) {
-				label.style.placeholderColor = owner.style.placeholderColor
-			}
-			label.style.textDecoration = owner.style.textDecoration
-
-			label.style.textAlignment =
-				owner.nativeView.itemsTextAlignment !== itemsTextAlignmentProperty.defaultValue && realizedViewType === 1 ? owner.nativeView.itemsTextAlignment : owner.style.textAlignment
-
-			label.style.fontInternal = owner.style.fontInternal
-			if (owner.style.fontSize) {
-				label.style.fontSize = owner.style.fontSize
-			}
-			view.style.backgroundColor = owner.style.backgroundColor
-
-			view.style.padding = owner.nativeView.itemsPadding !== itemsPaddingProperty.defaultValue && realizedViewType === 1 ? owner.nativeView.itemsPadding : owner.style.padding
-
-			view.style.height = owner.style.height
-
-			if (realizedViewType === RealizedViewType.DropDownView) {
-				view.style.opacity = owner.style.opacity
-			}
-
-			;(view as any).isHintViewIn = false
-
-			// Hint View styles
-			if (index === 0) {
-				if (label.style.placeholderColor) {
-					label.style.color = label.style.placeholderColor
-				} else {
-					label.style.color = new Color(255, 148, 150, 148)
-				}
-				;(view as any).isHintViewIn = true
-
-				// HACK: if there is no hint defined, make the view in the drop down virtually invisible.
-				if (realizedViewType === RealizedViewType.DropDownView && (Utils.isNullOrUndefined(owner.hint) || owner.hint === '')) {
-					view.height = 1
-				}
-				// END HACK
-			}
-
-			owner._realizedItems[realizedViewType].set(convertView, view)
-		}
-
-		return convertView
-	}
-
-	public onItemSelected(_parent: android.widget.AdapterView<any>, _view: android.view.View, _position: number, _id: number): void {
-		throw new Error('Method not implemented.')
-	}
-	public onNothingSelected(_parent: android.widget.AdapterView<any>): void {
-		throw new Error('Method not implemented.')
+	public onItemClick(parent: globalAndroid.widget.AdapterView<any>, view: globalAndroid.view.View, position: number, id: number) {
+		console.log(position)
 	}
 }

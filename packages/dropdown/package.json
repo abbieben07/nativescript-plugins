@@ -1,0 +1,37 @@
+{
+	"name": "@abbieben/dropdown",
+	"version": "3.0.12",
+	"description": "This is the description for the plugin seed. This is what will be published to NPM.",
+	"main": "./dropdown",
+	"sideEffects": false,
+	"typings": "./dropdown.d.ts",
+	"nativescript": {
+		"platforms": {
+			"android": "6.0.0",
+			"ios": "6.0.0"
+		}
+	},
+	"keywords": [
+		"NativeScript",
+		"JavaScript",
+		"Android",
+		"iOS",
+		"Angular",
+		"React",
+		"Svelte",
+		"Vue"
+	],
+	"bugs": {
+		"url": "https://github.com/abbieben/paystack/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/abbieben/paystack"
+	},
+	"license": "Apache-2.0",
+	"readmeFilename": "README.md",
+	"publishConfig": {
+		"access": "public"
+	},
+	"gitHead": "378fc2d725f8ad0b7a0933ff9627494c244041a4"
+}

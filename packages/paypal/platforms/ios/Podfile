@@ -1,0 +1,2 @@
+pod 'PayPalCheckout'
+platform :ios, '11.0'

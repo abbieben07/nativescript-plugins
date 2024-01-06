@@ -1,8 +1,10 @@
 // @ts-nocheck
 import Checkbox from '@abbieben/checkbox/vue'
+import Dropdown from '@abbieben/dropdown/vue'
 import { installRichText } from '@abbieben/rich-text'
 import Vue from 'nativescript-vue'
 import CheckboxPage from './Checkbox.vue'
+import DropdownPage from './Dropdown.vue'
 import FlutterwavePage from './Flutterwave.vue'
 import PayPalPage from './PayPal.vue'
 import PaystackPage from './Paystack.vue'
@@ -11,6 +13,7 @@ import RichTextPage from './RichText.vue'
 export function installPlugin() {
 	installRichText()
 	Vue.use(Checkbox)
+	Vue.use(Dropdown)
 }
 
 export const demos = [
@@ -38,5 +41,10 @@ export const demos = [
 		name: 'Checkbox',
 		path: 'checkbox',
 		component: CheckboxPage
+	},
+	{
+		name: 'Dropdown',
+		path: 'dropdown',
+		component: DropdownPage
 	}
 ]

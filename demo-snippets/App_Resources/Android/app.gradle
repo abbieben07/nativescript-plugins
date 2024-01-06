@@ -29,4 +29,20 @@ android {
     dexOptions {
         javaMaxHeapSize '4g'
     }
+
+   /*  buildFeatures {
+        compose = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+        allWarningsAsErrors = false
+        freeCompilerArgs += ['-opt-in=androidx.compose.material3.ExperimentalMaterial3Api']
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.1.1'
+    } */
 }

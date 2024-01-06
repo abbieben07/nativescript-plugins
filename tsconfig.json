@@ -17,6 +17,6 @@
 			"@abbieben/paypal/*": ["src/paypal/*"]
 		}
 	},
-	"include": ["src/**/*", "references.d.ts", "typings"],
+	"include": ["src/**/*", "references.d.ts"],
 	"exclude": ["node_modules", "demo-snippets"]
 }

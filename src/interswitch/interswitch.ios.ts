@@ -4,7 +4,7 @@ export default class Interswitch extends InterswitchCommon {
 	public pay(): Promise<Response> {
 		return new Promise((resolve, reject) => {
 			const info = IswPaymentInfo(this.id, this.name, this.email, this.phone, this.reference, this.amount)
-            IswMobileSdk.pay(InterswitchDelegate.init(resolve, reject), info, InterswitchDelegate.init(resolve, reject)))
+			IswMobileSdk.pay(InterswitchDelegate.init(resolve, reject), info, InterswitchDelegate.init(resolve, reject))
 		})
 	}
 }
